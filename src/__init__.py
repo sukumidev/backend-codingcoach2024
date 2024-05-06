@@ -5,6 +5,7 @@ import firebase_admin
 from firebase_admin import credentials
 from firebase_admin import firestore
 
+
 def create_app():
     app = Flask(__name__)
     api = Api(app)
