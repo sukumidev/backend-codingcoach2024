@@ -1,0 +1,3 @@
+[submodule "front_codingcoach"]
+	path = front_codingcoach
+	url = https://github.com/sukumidev/codingcoach2024/
