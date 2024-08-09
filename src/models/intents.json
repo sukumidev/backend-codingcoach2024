@@ -1,0 +1,50 @@
+{
+    "intents": [
+        {
+            "tag": "greeting",
+            "patterns": ["Hello", "Hi", "Greetings"],
+            "responses": ["Hello, how can I assist you today?"],
+            "context_set": ""
+        },
+        {
+            "tag": "experience_question",
+            "patterns": ["I have X years of experience", "I have worked for X years"],
+            "responses": ["Perfect, let's proceed to your technical evaluation."],
+            "context_set": "experience_provided"
+        },
+        {
+            "tag": "start_technical_evaluation",
+            "patterns": ["I am ready for the technical evaluation", "Let's start the evaluation"],
+            "responses": ["I will select a question for you now..."],
+            "context_set": "select_question"
+        },
+        {
+            "tag": "provide_next_question",
+            "patterns": [""],
+            "responses": [""],
+            "context_set": "question_provided"
+        },
+        {
+            "tag": "ask_for_experience",
+            "patterns": ["Tell me about your experience"],
+            "responses": ["How many years of experience do you have?"],
+            "context_set": "waiting_for_experience"
+        },
+        {
+            "tag": "provide_experience",
+            "patterns": ["I have X years of experience"],
+            "responses": ["Great, let's proceed to the next step."],
+            "context_filter": "waiting_for_experience"
+        },
+        {
+            "tag": "error_handling",
+            "patterns": ["I don't understand", "Can you repeat that?"],
+            "responses": ["I'm sorry, I didn't quite catch that. Could you please rephrase?"]
+        },
+        {
+            "tag": "end_interview",
+            "patterns": ["Thank you, I'm done", "That's all for now"],
+            "responses": ["Thank you for your time! We'll get back to you shortly."]
+        }
+    ]
+}

@@ -1,0 +1,14 @@
+Question Number,Question,Answer,Category,Difficulty Points,Challenge,StarterCode,ExpectedOutput
+215,Write a function to check if a number is even or odd.,function isEvenOrOdd(num) { return num % 2 === 0 ? 'even' : 'odd'; },Javascript,10,TRUE,function isEvenOrOdd(num) { \n // Your code here \n },"[{""input"": ""4"", ""output"": ""even""}, {""input"": ""7"", ""output"": ""odd""}]"
+216,Write a function to sum all numbers in an array.,"function sumArray(arr) { return arr.reduce((a, b) => a + b, 0); }",Javascript,15,TRUE,function sumArray(arr) { \n // Your code here \n },"[1, 2, 3, 4, 5]"", ""output"": ""15""}]"
+217,Write a function that takes an array and returns a new array with duplicate elements removed.,,Javascript,10,TRUE,"function removeDuplicates(arr) {
+    \n // Your code here \n 
+}
+
+","[{""input"": [1, 2, 2, 3, 4, 4],""output"": [1, 2, 3, 4]}]"
+218,What is a closure in JavaScript?,"A closure is a function that retains access to its lexical scope, even when the function is executed outside that scope.",Javascript,10,FALSE,,
+219,"Explain the concept of ""hoisting"" in JavaScript.","Hoisting is JavaScript's default behavior of moving declarations to the top of the current scope, making them accessible before the point of declaration.",Javascript,10,FALSE,,
+220,What is the difference between call and apply methods?,"call invokes a function with a given this value and arguments provided individually, while apply does so with arguments provided as an array.",Javascript,10,FALSE,,
+221,How does event delegation work in JavaScript?,"Event delegation uses a single event listener on a parent element to manage events for its child elements, leveraging event bubbling.",Javascript,10,FALSE,,
+222,What is the purpose of the Promise object in JavaScript?,A Promise represents the eventual completion (or failure) of an asynchronous operation and its resulting value.,Javascript,10,FALSE,,
+223,What is the difference between == and === in JavaScript?,"""=="" checks for equality after type coercion, whereas === checks for strict equality without type conversion.",Javascript,10,FALSE,,
