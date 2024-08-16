@@ -6,7 +6,8 @@ from nltk.stem import WordNetLemmatizer
 import pickle
 from .utils import extract_years, extract_technologies, extract_level
 from src.question_manager import get_question
-
+from flask import session,current_app
+import jwt
 
 lemmatizer = WordNetLemmatizer()
 
@@ -18,63 +19,49 @@ class Chatbot:
         self.classes = classes
         self.intents = intents
 
-    def predict_class(self, sentence):
-        # Generar la bolsa de palabras para la oración de entrada
-        p = self.bow(sentence)
-        # Hacer la predicción usando el modelo
-        res = self.model.predict(p)[0]
-        # Determinar la clase con la mayor probabilidad
-        return self.classes[np.argmax(res)]
+    def generate_new_token(self, current_user_id, context):
+        token = jwt.encode({
+            'user_id': current_user_id,
+            'context': context
+        }, current_app.config['SECRET_KEY'], algorithm="HS256")
+        return token
 
-    def clean_up_sentence(self, sentence):
-        sentence_words = nltk.word_tokenize(sentence)
-        sentence_words = [lemmatizer.lemmatize(word.lower()) for word in sentence_words]
-        return sentence_words
-
-    def bow(self, sentence):
-        # Tokenizar la oración y convertirla en un vector de "bag of words"
-        sentence_words = self.clean_up_sentence(sentence)
-        bag = [0] * len(self.words)
-        for s in sentence_words:
-            for i, w in enumerate(self.words):
-                if w == s:
-                    bag[i] = 1
-        return np.array([bag])
-
-    def get_response(self, intent):
-        for i in self.intents['intents']:
-            if i['tag'] == intent:
-                return random.choice(i['responses'])
-
-    def chat(self, message):
-        ints = self.predict_class(message)
+    def chat(self, message, current_context, current_user_id):
         response = {"response": "", "next": ""}
 
-        if ints == "start_technical_evaluation":
-            # Iniciar la evaluación técnica
-            self.current_context = "technical_evaluation"
+        print(f"Current context before: {current_context}")
+
+        if current_context is None:
+            current_context = "experience_question"
+            response["response"] = "Welcome! Let's start the interview. Can you tell me how many years of work experience you have?"
+
+        elif current_context == "experience_question":
+            print(f"Received experience: {message}")
+            current_context = "technology_question"
+            response["response"] = "Thank you! Can you tell me which technologies you have experience with?"
+
+        elif current_context == "technology_question":
+            print(f"Received technologies: {message}")
+            current_context = "technical_evaluation"
+            response["response"] = "Great! Let's start the technical evaluation. Please answer the following question."
             question = get_question(category="General Programming", difficulty="Medium", code_challenge=False)
             if question:
-                response["response"] = question["question"]
-                response["next"] = "Please provide your answer."
-                # Aquí podrías guardar la pregunta seleccionada para comparar con la respuesta del usuario más tarde
-                self.current_question = question
+                response["next"] = question["question"]
             else:
-                response["response"] = "No suitable question found."
+                response["next"] = "No suitable question found."
 
-        elif self.current_context == "technical_evaluation":
-            # Comparar la respuesta del usuario con la respuesta correcta
-            if message.lower() == self.current_question["answer"].lower():
+        elif current_context == "technical_evaluation":
+            print(f"Evaluating answer: {message}")
+            if message.lower() == "correct answer":  # Ajusta esta lógica según tu implementación
                 response["response"] = "Correct! Well done."
             else:
-                response["response"] = f"Incorrect. The correct answer is: {self.current_question['answer']}"
+                response["response"] = "Incorrect. The correct answer is: correct answer"
 
-            # Seleccionar la siguiente pregunta
-            next_question = get_question(category="General Programming", difficulty="Medium", code_challenge=False)
-            if next_question:
-                response["next"] = next_question["question"]
-                self.current_question = next_question
-            else:
-                response["next"] = "No more questions available."
+            # Aquí puedes actualizar el contexto o finalizar el proceso
 
-        return response
+        # Generar un nuevo token con el contexto actualizado
+        new_token = self.generate_new_token(current_user_id, current_context)
+
+        print(f"New context after: {current_context}")
+
+        return response, new_token

@@ -4,19 +4,23 @@ import random
 import subprocess
 import bcrypt
 import nltk
+import datetime
 import numpy as np
 import pandas as pd
 from flask_restful import reqparse
 from nltk.stem import WordNetLemmatizer
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
-from flask import current_app as app
+from flask import current_app as app, Response
 from flask_restful import Resource
-from flask import request, jsonify
+from flask import request, jsonify, session
 from tensorflow.keras.models import load_model
 import pickle
 import json
 from src.chatbot import Chatbot
+import jwt
+
+SECRET_KEY = 'bts-txt-ateez-skz-TUSPATRONES!'
 
 nltk.download('punkt')
 nltk.download('wordnet')
@@ -37,7 +41,6 @@ model = pickle.load(open('src/models/chatbot_model.pkl', 'rb'))
 # Cargar los intents con json
 with open('src/models/intents.json', 'r') as file:
     intents = json.load(file)
-
 
 words = pickle.load(open(os.path.join(base_dir, './models/words.pkl'), 'rb'))
 classes = pickle.load(open(os.path.join(base_dir, './models/classes.pkl'), 'rb'))
@@ -168,7 +171,7 @@ class Login(Resource):
         parser.add_argument('email', required=True, help="Email cannot be blank")
         parser.add_argument('password', required=True, help="Password cannot be blank")
         data = parser.parse_args()
-        db = app.db
+        db = app.db  # Asegúrate de que este `app` es el mismo que inicializaste en `create_app`
 
         try:
             users_ref = db.collection('users')
@@ -177,13 +180,24 @@ class Login(Resource):
             user = None
             for doc in query:
                 user = doc.to_dict()
-                user['id'] = doc.id  # Ensure user ID is included in response
+                user['id'] = doc.id  # Asegúrate de que el ID de usuario se incluya en la respuesta
                 break
 
             if user:
                 stored_password = base64.b64decode(user['password'].encode('utf-8'))
                 if bcrypt.checkpw(data['password'].encode('utf-8'), stored_password):
-                    return {"success": True, "message": "Login successful", "user": user}, 200
+                    # Generar el token JWT
+                    token = jwt.encode({
+                        'user_id': user['email'],
+                        'exp': datetime.datetime.utcnow() + datetime.timedelta(hours=1)
+                    }, SECRET_KEY, algorithm="HS256")
+
+                    return {
+                        "success": True,
+                        "message": "Login successful",
+                        "token": token,  # Incluir el token en la respuesta
+                        "user": user
+                    }, 200
                 else:
                     return {"success": False, "message": "Invalid password"}, 401
             else:
