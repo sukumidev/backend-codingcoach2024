@@ -10,7 +10,20 @@ from src import create_app
 from src.chatbot import Chatbot
 from src.routes import initialize_routes
 from flask_cors import CORS
+import nltk
 
+try:
+    nltk.data.find('tokenizers/punkt')
+except LookupError:
+    nltk.download('punkt')
+try:
+    nltk.data.find('corpora/wordnet')
+except LookupError:
+    nltk.download('wordnet')
+try:
+    nltk.data.find('corpora/stopwords')
+except LookupError:
+    nltk.download('stopwords')
 def test_server():
     print("Server is running...")
 
