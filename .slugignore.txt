@@ -1,0 +1,10 @@
+# Excluir carpetas innecesarias
+tests/
+docs/
+__pycache__/
+*.pyc
+
+# Excluir archivos grandes
+*.csv
+*.tar.gz
+*.zip
