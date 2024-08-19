@@ -88,6 +88,7 @@ sequential==1.0.0
 setuptools==72.1.0
 six==1.16.0
 termcolor==2.4.0
+tensorflow-cpu==2.11.0
 threadpoolctl==3.5.0
 tqdm==4.66.4
 typing_extensions==4.12.2
