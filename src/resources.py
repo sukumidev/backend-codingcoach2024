@@ -8,13 +8,13 @@ import datetime
 import numpy as np
 import pandas as pd
 from flask_restful import reqparse
+from keras.src.saving import load_model
 from nltk.stem import WordNetLemmatizer
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 from flask import current_app as app, Response
 from flask_restful import Resource
 from flask import request, jsonify, session
-from tensorflow.keras.models import load_model
 import pickle
 import json
 from src.chatbot import Chatbot
