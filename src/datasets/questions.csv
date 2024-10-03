@@ -1,14 +1,881 @@
-Question Number,Question,Answer,Category,Difficulty Points,Challenge,StarterCode,ExpectedOutput
-215,Write a function to check if a number is even or odd.,function isEvenOrOdd(num) { return num % 2 === 0 ? 'even' : 'odd'; },Javascript,10,TRUE,function isEvenOrOdd(num) { \n // Your code here \n },"[{""input"": ""4"", ""output"": ""even""}, {""input"": ""7"", ""output"": ""odd""}]"
-216,Write a function to sum all numbers in an array.,"function sumArray(arr) { return arr.reduce((a, b) => a + b, 0); }",Javascript,15,TRUE,function sumArray(arr) { \n // Your code here \n },"[1, 2, 3, 4, 5]"", ""output"": ""15""}]"
-217,Write a function that takes an array and returns a new array with duplicate elements removed.,,Javascript,10,TRUE,"function removeDuplicates(arr) {
+QuestionID,Difficulty_Points,Question,Keywords,Answer,Category,Language,Challenge,StarterCode,ExpectedOutput
+1,15,What is object-oriented programming?,"""object-oriented programming, OOP, paradigm, objects, attributes, methods, data""",It is a programming paradigm that organizes code into objects that combine attributes (data) and methods (behavior).,oop,English,FALSE,,
+2,15,What is a class in OOP?,"""class, template, blueprint, OOP, attributes, methods, objects""",It is a template or model that defines the attributes and methods that the objects created from it will have.,oop,English,FALSE,,
+3,15,What is an object?,"""object, instance, class, entity, attributes, methods, OOP""","It is an instance of a class, representing an entity with specific attributes and methods.",oop,English,FALSE,,
+4,15,What is an instance in OOP?,"""instance, object, class, creation, specific, OOP""",It is an object created from a specific class.,oop,English,FALSE,,
+5,35,What is polymorphism in OOP?,"""polymorphism, method overriding, OOP, superclass, subclass, multiple forms""",It is the ability of different classes to respond to the same method in different ways.,oop,English,FALSE,,
+6,15,What are attributes in OOP?,"""attributes, properties, characteristics, class, object, OOP""","They are the properties or characteristics that an object has, defined in the class.",oop,English,FALSE,,
+7,15,What are methods in OOP?,"""methods, functions, actions, class, object, OOP""",They are the functions or actions that objects of a class can perform.,oop,English,FALSE,,
+8,35,What is a constructor in OOP?,"""constructor, initialization, object, class, OOP, properties""","It is a special method that runs automatically when an object is created from a class, initializing its attributes.",oop,English,FALSE,,
+9,35,What is a destructor in OOP?,"""destructor, object, class, memory, resources, OOP, free, release""","It is a special method that runs when an object is destroyed or no longer used, releasing resources.",oop,English,FALSE,,
+10,35,What is method overloading in OOP?,"""method overloading, methods, parameters, OOP, multiple, signatures""",It is the ability to define multiple methods with the same name but with different parameters.,oop,English,FALSE,,
+11,35,What is abstraction in OOP?,"""abstraction, hide complexity, essential features, OOP, class, interface""",It is the process of hiding complex details and showing only the essential functionality of an object or class.,oop,English,FALSE,,
+12,35,What is inheritance in OOP?,"""inheritance, superclass, subclass, attributes, methods, reuse, OOP""",It is the mechanism that allows one class to acquire attributes and methods from another class,oop,English,FALSE,,
+13,35,What is encapsulation in OOP?,"""encapsulation, data hiding, access control, methods, class, private, public, OOP""","It is the principle that restricts direct access to an object's attributes and methods, exposing only what is necessary.",oop,English,FALSE,,
+14,35,What is a local variable?,"""local variable, function, scope, limited, block, context""","It is a variable defined within a function or block of code, accessible only within that context.",oop,English,FALSE,,
+15,35,What is a global variable?,"""global variable, program, accessible, scope, outside function, persistent""","It is a variable defined outside of any function or class, accessible from any part of the program.",oop,English,FALSE,,
+16,35,What is the difference between compilation and interpretation?,"""compilation, interpretation, source code, machine code, line-by-line, executable""",Compilation translates source code into machine code creating an executable file. Interpretation translates and executes code line by line without an executable.,general programming,English,FALSE,,
+17,65,Explain the concept of polymorphism.,"""polymorphism, multiple forms, method overriding, superclass, subclass, OOP""","Polymorphism allows objects of different classes to be treated as objects of a common superclass, enabling method overriding.",general programming,English,FALSE,,
+18,65,Define encapsulation and give an example.,"""encapsulation, data, methods, access control, private, public, OOP, example""","Encapsulation bundles data and methods in a class, restricting direct data access. Example: class with private data and public methods.",general programming,English,FALSE,,
+19,35,"What is an abstract class, and how is it different from an interface?","""abstract class, interface, methods, OOP, inheritance, concrete, abstract, implementation""",An abstract class can't be instantiated and can have abstract and concrete methods. An interface only has method signatures without implementations.,general programming,English,FALSE,,
+20,65,Describe the principles of Object-Oriented Programming (OOP).,"""OOP principles, encapsulation, inheritance, polymorphism, abstraction, design, organized code""","OOP principles include encapsulation, inheritance, polymorphism, and abstraction, promoting organized and maintainable code.",general programming,English,FALSE,,
+21,15,What is the purpose of a constructor?,"""constructor, initialize, object, class, properties, state, OOP""","A constructor initializes object properties upon class instantiation, ensuring a well-defined state.",general programming,English,FALSE,,
+22,65,Explain the difference between stack and heap memory.,"""stack memory, heap memory, allocation, LIFO, dynamic, static, function calls, garbage collection""","Stack memory stores local variables and function calls; heap memory is for dynamic allocation. Stack operates in LIFO, heap managed manually or by garbage collection.",general programming,English,FALSE,,
+23,,"What is a design pattern, and can you name a few?","""design pattern, solutions, software design, common problems, examples, Singleton, Factory, Observer""","Design patterns are solutions to common design problems. Examples: Singleton, Factory, Observer, MVC.",general programming,English,FALSE,,
+24,15,"Define the term ""DRY"" in software development.","""DRY, Don't Repeat Yourself, avoid duplication, reuse code, efficiency, software development""",DRY (Don't Repeat Yourself) advocates for avoiding code duplication by reusing existing code.,general programming,English,FALSE,,
+25,35,What is the SOLID principle?,"""SOLID, design principles, OOP, Single Responsibility, Open/Closed, Liskov Substitution, Interface Segregation, Dependency Inversion""","SOLID represents five design principles for OOP: Single Responsibility, Open/Closed, Liskov Substitution, Interface Segregation, Dependency Inversion.",general programming,English,FALSE,,
+26,35,What is the difference between an array and a linked list?,"""array, linked list, fixed size, dynamic size, contiguous memory, nodes, references, elements, access""","An array has fixed size and stores elements in contiguous memory; a linked list consists of nodes with data and references, allowing dynamic size.",data structures,English,FALSE,,
+27,35,Explain the time complexity of an algorithm.,"""time complexity, algorithm, execution time, input size, Big O notation, efficiency, analysis""","Time complexity measures the time an algorithm takes relative to its input size, expressed in Big O notation.",data structures,English,FALSE,,
+28,35,Describe the difference between a binary search tree and a hash table.,"""binary search tree, hash table, hierarchical, key-value, structure, ordered, unordered, access time""","A binary search tree is hierarchical, maintaining order; a hash table maps keys to values for fast retrieval, without maintaining order.",data structures,English,FALSE,,
+29,35,What is a linked list and how does it work?,"""linked list, nodes, references, dynamic memory, sequential access, head, next node""","A linked list is a series of nodes each containing data and a reference to the next node, allowing dynamic memory allocation and efficient insertions/deletions.",data structures,English,FALSE,,
+30,35,Explain the concept of recursion.,"""recursion, function, calls itself, base case, subproblems, repeated, termination""","Recursion is when a function calls itself to solve subproblems, with a base case to terminate recursion.",data structures,English,FALSE,,
+31,35,"What is Big O notation, and why is it important?","""Big O notation, time complexity, space complexity, algorithm, efficiency, growth rate, performance""","Big O notation describes the upper bound of algorithm time complexity, important for comparing efficiency and growth rates.",data structures,English,FALSE,,
+32,35,How do you perform a binary search on a sorted array?,"""binary search, sorted array, divide, middle element, comparison, target, efficiency, O(log n)""","Binary search divides the search interval in half, repeatedly comparing the middle element to the target.",data structures,English,FALSE,,
+33,65,What is dynamic programming?,"""dynamic programming, optimization, subproblems, overlapping subproblems, memoization, recursive, efficient""","Dynamic programming solves complex problems by dividing them into smaller subproblems, avoiding redundant calculations.",data structures,English,FALSE,,
+34,15,What is a data structure?,"""data structure, organization, storage, access, manipulation, efficiency, memory""",t is a way of organizing and storing data in a system so that it can be accessed and manipulated efficiently.,data structures,English,FALSE,,
+35,15,What is an array?,"""array, elements, contiguous memory, fixed size, index, collection, access""",It is a data structure that stores a collection of elements of the same type in contiguous memory locations.,data structures,English,FALSE,,
+36,15,What is a linked list?,"""linked list, nodes, references, sequential, dynamic size, memory, head, next""",It is a data structure in which each element (node) contains a value and a reference to the next node in the sequence.,data structures,English,FALSE,,
+37,15,What is a stack?,"""stack, LIFO, last in first out, push, pop, elements, memory, function calls""","It is a data structure that follows the LIFO (Last In, First Out) principle, where the last element inserted is the first to be removed.",data structures,English,FALSE,,
+38,15,What is a queue?,"""queue, FIFO, first in first out, enqueue, dequeue, elements, order""","It is a data structure that follows the FIFO (First In, First Out) principle, where the first element inserted is the first to be removed.",data structures,English,FALSE,,
+39,15,What is a binary tree?,"""binary tree, nodes, hierarchical, left child, right child, root, traversal""","It is a hierarchical data structure where each node has at most two children, referred to as the ""left child"" and ""right child.""",data structures,English,FALSE,,
+40,15,What is a graph?,"""graph, vertices, edges, nodes, connections, relationships, structure""",It is a data structure that consists of a set of nodes (vertices) and a set of edges (connections) between the nodes.,data structures,English,FALSE,,
+41,15,What is a hash or hash table?,"""hash, hash table, key-value pairs, hash function, fast access, O(1), collision, lookup""",It is a data structure that stores key-value pairs and uses a hash function to compute the location of each element.,data structures,English,FALSE,,
+42,15,What is a doubly linked list?,"""doubly linked list, nodes, references, next, previous, dynamic size, memory""",It is a variation of the linked list where each node has a reference to both the next node and the previous node.,data structures,English,FALSE,,
+43,35,What is the time complexity of an algorithm?,"""time complexity, algorithm, execution time, input size, Big O notation, efficiency""","It is a measure of how long an algorithm takes to run as a function of the size of the input, typically expressed in Big O notation.",data structures,English,FALSE,,
+44,35,¿Cuál es la diferencia entre compilación e interpretación?,"""compilación, interpretación, ejecutable, código fuente, máquina, línea por línea, traducción""",La compilación traduce el código fuente en código máquina creando un archivo ejecutable. La interpretación traduce y ejecuta el código línea por línea sin un ejecutable.,data structures,Spanish,FALSE,,
+45,35,¿Qué es una clase abstracta y cómo se diferencia de una interfaz?,"""clase abstracta, interfaz, métodos abstractos, métodos concretos, herencia, implementación, diferencia""",Una clase abstracta no se puede instanciar y puede tener métodos abstractos y concretos. Una interfaz solo tiene las firmas de los métodos sin implementaciones.,data structures,Spanish,FALSE,,
+46,65,Describe los principios de la programación orientada a objetos (POO).,"""POO, principios, encapsulamiento, herencia, polimorfismo, abstracción, diseño, clases, atributos, métodos""","Los principios de POO incluyen encapsulamiento, herencia, polimorfismo y abstracción, promoviendo código organizado y mantenible.",data structures,Spanish,FALSE,,
+47,65,Explica la diferencia entre la memoria de pila (stack) y la memoria dinámica (heap).,"""pila, stack, memoria dinámica, heap, local, dinámica, LIFO, asignación, recolección de basura""","La memoria de pila almacena variables locales y llamadas a funciones; la memoria dinámica es para asignación dinámica. La pila opera en LIFO, la memoria dinámica se gestiona manualmente o por recolección de basura.",data structures,Spanish,FALSE,,
+48,35,¿Qué es un patrón de diseño y puedes nombrar algunos?,"""patrón de diseño, soluciones, problemas comunes, software, ejemplos, Singleton, Factory, Observer""","Los patrones de diseño son soluciones a problemas comunes de diseño. Ejemplos: Singleton, Factory, Observer, MVC.",general programming,Spanish,FALSE,,
+49,15,"Define el término ""DRY"" en desarrollo de software.","""DRY, Don't Repeat Yourself, evitar, duplicación, reutilización, código, eficiencia""",DRY (Don't repeat yoursef) promueve evitar la duplicación de código reutilizando el código existente.,general programming,Spanish,FALSE,,
+50,35,¿Qué es el principio SOLID?,"""SOLID, principios, diseño, responsabilidad única, abierto/cerrado, sustitución de Liskov, inversión de dependencias, patrón""","SOLID representa cinco principios de diseño para POO: Responsabilidad Única, Abierto/Cerrado, Sustitución de Liskov, Segregación de Interfaces, Inversión de Dependencias.",general programming,Spanish,FALSE,,
+51,35,¿Cuál es la diferencia entre un arreglo y una lista enlazada?,"""arreglo, lista enlazada, tamaño fijo, dinámico, memoria contigua, nodos, referencias, acceso, dinámica""","Un arreglo tiene tamaño fijo y almacena elementos en memoria contigua; una lista enlazada consiste en nodos con datos y referencias, permitiendo tamaño dinámico.",data structures,Spanish,FALSE,,
+52,35,Explica la complejidad temporal de un algoritmo.,"""complejidad temporal, algoritmo, tiempo, ejecución, entrada, notación Big O, eficiencia""","La complejidad temporal mide el tiempo que tarda un algoritmo en función del tamaño de la entrada, expresado en notación Big O.",algorithms,Spanish,FALSE,,
+53,35,Describe la diferencia entre un árbol binario de búsqueda y una tabla hash.,"""árbol binario, búsqueda, tabla hash, jerárquico, clave, valor, estructura, orden, acceso rápido""","Un árbol binario de búsqueda es jerárquico, manteniendo un orden; una tabla hash asigna claves a valores para una recuperación rápida, sin mantener orden.",data structures,Spanish,FALSE,,
+54,35,Explica el concepto de recursión.,"""recursión, función, llamarse a sí misma, subproblemas, caso base, terminación, llamarse a si mismo""","La recursión es cuando una función se llama a sí misma para resolver subproblemas, con un caso base para terminar la recursión.",algorithms,Spanish,FALSE,,
+55,35,¿Qué es la notación Big O y por qué es importante?,"""notación Big O, complejidad, tiempo, algoritmo, eficiencia, crecimiento, análisis""","La notación Big O describe el límite superior de la complejidad temporal de un algoritmo, importante para comparar la eficiencia y las tasas de crecimiento.",algorithms,Spanish,FALSE,,
+56,35,¿Cómo realizas una búsqueda binaria en un arreglo ordenado?,"""búsqueda binaria, arreglo ordenado, dividir, mitad, comparación, objetivo""","La búsqueda binaria divide el intervalo de búsqueda a la mitad, comparando repetidamente el elemento del medio con el objetivo.",data structures,Spanish,FALSE,,
+57,65,¿Qué es la programación dinámica?,"""programación dinámica, subproblemas, optimización, memoria, evitar redundancia, solución""","La programación dinámica resuelve problemas complejos dividiéndolos en subproblemas más pequeños, evitando cálculos redundantes.",data structures,Spanish,FALSE,,
+58,15,¿Qué es una estructura de datos?,"""estructura de datos, organización, almacenamiento, acceso, manipulación, eficiente""",Es una manera de organizar y almacenar datos en un sistema de forma que se pueda acceder y manipular de manera eficiente.,data structures,Spanish,FALSE,,
+59,15,¿Qué es un array (arreglo)?,"""array, arreglo, elementos, tipo, contiguo, memoria, índice, colección""",Es una estructura de datos que almacena una colección de elementos del mismo tipo en posiciones contiguas de memoria.,data structures,Spanish,FALSE,,
+60,15,¿Qué es una lista enlazada?,"""lista enlazada, nodos, referencias, secuencia, datos, dinámico, memoria""",Es una estructura de datos en la que cada elemento (nodo) contiene un valor y una referencia al siguiente nodo en la secuencia.,data structures,Spanish,FALSE,,
+61,15,¿Qué es una pila (stack)?,"""pila, stack, LIFO, último, primero, elementos, inserción, eliminación""","Es una estructura de datos que sigue el principio LIFO (Last In, First Out), donde el último elemento insertado es el primero en salir.",data structures,Spanish,FALSE,,
+62,15,¿Qué es una cola (queue)?,"""cola, queue, FIFO, primero, último, elementos, inserción, eliminación""","Es una estructura de datos que sigue el principio FIFO (First In, First Out), donde el primer elemento insertado es el primero en salir.",data structures,Spanish,FALSE,,
+63,15,¿Qué es un árbol binario?,"""árbol binario, jerárquico, nodos, hijos, izquierdo, derecho, raíz, descendencia""","Es una estructura de datos jerárquica en la que cada nodo tiene como máximo dos hijos, denominados ""hijo izquierdo"" y ""hijo derecho"".",data structures,Spanish,FALSE,,
+64,15,¿Qué es un grafo?,"""grafo, nodos, vértices, aristas, conexiones, relaciones, estructura""",Es una estructura de datos que consiste en un conjunto de nodos (vértices) y un conjunto de aristas (conexiones) entre los nodos.,data structures,Spanish,FALSE,,
+65,35,¿Qué es un hash o tabla hash?,"""hash, tabla hash, clave, valor, función hash, búsqueda, rápida, acceso""",Es una estructura de datos que almacena pares clave-valor y utiliza una función hash para calcular la ubicación de cada elemento.,data structures,Spanish,FALSE,,
+66,35,¿Qué es una lista doblemente enlazada?,"""lista doblemente enlazada, nodos, referencias, siguiente, anterior, dinámico, dinámica""",Es una variación de la lista enlazada donde cada nodo tiene una referencia tanto al siguiente nodo como al anterior.,data structures,Spanish,FALSE,,
+67,65,¿Qué es la complejidad temporal de un algoritmo?,"""complejidad temporal, algoritmo, tiempo, ejecución, notación Big O, eficiencia""","Es una medida de cuánto tiempo toma un algoritmo en función del tamaño de la entrada, comúnmente expresada en notación Big O.",data structures,Spanish,FALSE,,
+68,15,¿Qué es la programación orientada a objetos?,"""paradigma, objetos, atributos, métodos""",Es un paradigma de programación que organiza el código en objetos que combinan atributos (datos) y métodos (comportamiento).,oop,Spanish,FALSE,,
+69,15,¿Qué es una clase en POO?,"""clase, plantilla, modelo, POO, atributos, métodos""",Es una plantilla o modelo que define los atributos y métodos que los objetos creados a partir de ella tendrán.,oop,Spanish,FALSE,,
+70,15,¿Qué es un objeto?,"""objeto, instancia, clase, entidad, atributos, método""","Es una instancia de una clase, que representa una entidad con atributos y métodos específicos.",oop,Spanish,FALSE,,
+71,15,¿Qué es una instancia en POO?,"""instancia, objeto, clase, POO, creación, entidad""",Es un objeto creado a partir de una clase específica.,oop,Spanish,FALSE,,
+72,35,¿Qué es el polimorfismo en POO?,"""polimorfismo, POO, sobrecarga, método, clases, superclase, herencia""",Es la capacidad de diferentes clases de responder a un mismo método de manera distinta.,oop,Spanish,FALSE,,
+73,15,¿Qué son los atributos en POO?,"""atributos, propiedades, características, clase, objeto, POO""","Son las propiedades o características que tiene un objeto, definidos en la clase.",oop,Spanish,FALSE,,
+74,15,¿Qué son los métodos en POO?,"""métodos, funciones, acciones, clase, objeto, POO""",Son las funciones o acciones que pueden realizar los objetos de una clase.,oop,Spanish,FALSE,,
+75,15,¿Qué es un constructor en POO?,"""constructor, inicialización, clase, objeto, POO, propiedades""","Es un método especial que se ejecuta automáticamente al crear un objeto de una clase, inicializando sus atributos.",oop,Spanish,FALSE,,
+76,35,¿Qué es un destructor en POO?,"""destructor, clase, objeto, liberar, memoria, recursos, POO""","Es un método especial que se ejecuta cuando un objeto es destruido o ya no es utilizado, liberando recursos.",oop,Spanish,FALSE,,
+77,35,¿Qué es la sobrecarga en POO?,"""métodos, parámetros, POO, polimorfismo, múltiples""",Es la capacidad de definir múltiples métodos con el mismo nombre pero con diferentes parámetros.,oop,Spanish,FALSE,,
+78,35,¿Qué es la abstracción en POO?,"""abstracción, ocultar, complejidad, detalles, esenciales, POO, clases, interfaces""",Es el proceso de ocultar detalles complejos y mostrar solo la funcionalidad esencial de un objeto o clase.,oop,Spanish,FALSE,,
+79,35,¿Qué es la herencia en POO?,"""herencia, clases, superclase, subclase, atributos, métodos, POO, reutilización""",Es el mecanismo que permite que una clase adquiera atributos y métodos de otra clase.,oop,Spanish,FALSE,,
+80,35,¿Qué es el encapsulamiento en POO?,"""encapsulamiento, ocultar, datos, métodos, acceso, restricción, POO, clase, privado, público""","Es el principio que restringe el acceso directo a los atributos y métodos de un objeto, exponiendo solo lo necesario.",oop,Spanish,FALSE,,
+81,15,¿Qué es una variable local?,"""variable local, función, bloque, contexto, alcance, acceso, temporal""","Es una variable definida dentro de una función o bloque de código, accesible solo dentro de ese contexto.",oop,Spanish,FALSE,,
+82,15,¿Qué es una variable global?,"""variable global, programa, alcance, acceso, externa, permanente, contexto""","Es una variable definida fuera de cualquier función o clase, accesible desde cualquier parte del programa.",oop,Spanish,FALSE,,
+83,15,How do you write a single-line comment in JavaScript?,"""single-line comment, JavaScript, //, syntax, comment""",Use // before the comment text.,javascript,English,FALSE,,
+84,15,What does === operator do in JavaScript?,"""=== operator, strict equality, comparison, type, value, JavaScript""","It checks for strict equality, meaning both the value and type must be the same.",javascript,English,FALSE,,
+85,15,How do you create an array in JavaScript?,"""create, array, JavaScript, [], elements, initialization""","Use square brackets: let arr = [1, 2, 3];",javascript,English,FALSE,,
+86,15,How do you find the length of a string in JavaScript?,"""find, length, string, JavaScript, length property, size""",Use the length property: str.length,javascript,English,FALSE,,
+87,15,What is the difference between null and undefined?,"""null, undefined, JavaScript, difference, type, value, absence""",null is an assignment value. undefined means a variable has been declared but not yet assigned a value.,javascript,English,FALSE,,
+88,15,How do you create a function in JavaScript?,"""create, function, JavaScript, function declaration, function expression""",Use the function keyword: function myFunction() { },javascript,English,FALSE,,
+89,15,What does the push method do in an array?,"""push method, array, add, element, end, JavaScript""",It adds one or more elements to the end of an array and returns the new length.,javascript,English,FALSE,,
+90,15,How do you convert a string to an integer in JavaScript?,"""convert, string, integer, JavaScript, parseInt(), Number()""","Use parseInt(): parseInt(""123"");",javascript,English,FALSE,,
+91,15,What is an anonymous function in JavaScript?,"""anonymous function, JavaScript, function, no name, expression, callback""",A function without a name: function() { },javascript,English,FALSE,,
+92,15,How can you create a deep copy of an object in JavaScript?,"""deep copy, object, JavaScript, JSON.parse(), JSON.stringify(), clone, reference""",Use JSON.parse(JSON.stringify(obj)) or a recursive function to copy all nested objects and arrays.,javascript,English,FALSE,,
+93,35,What is the use of the async and await keywords?,"""async, await, JavaScript, asynchronous, promises, keywords, handling""","async declares a function that returns a Promise, and await pauses execution of the function until the Promise is resolved.",javascript,English,FALSE,,
+94,35,What is the event loop in JavaScript?,"""event loop, JavaScript, asynchronous, tasks, call stack, execution, queue""","The event loop handles execution of multiple chunks of code, allowing non-blocking asynchronous callbacks to be executed.",javascript,English,FALSE,,
+95,35,What is the purpose of the bind method in JavaScript?,"""bind method, JavaScript, bind(), this, function, context, method""","bind creates a new function with a specified this value and initial arguments, which can be invoked later.",javascript,English,FALSE,,
+96,35,Explain the concept of prototypal inheritance in JavaScript.,"""prototypal inheritance, JavaScript, prototype, inheritance, objects, chain""",Prototypal inheritance is a feature in JavaScript where objects can inherit properties and methods from other objects. This is achieved via the prototype chain.,javascript,English,FALSE,,
+97,35,What are generators in JavaScript and how do they differ from regular functions?,"""generators, JavaScript, generator functions, yield, regular functions, pause, resume""","Generators are functions that can be paused and resumed, using function* syntax and yield keyword. They return an iterator object.",javascript,English,FALSE,,
+98,35,What is the difference between synchronous and asynchronous execution in JavaScript?,"""synchronous, asynchronous, JavaScript, execution, difference, blocking, non-blocking""","Synchronous execution blocks the program until the current operation completes, while asynchronous execution allows the program to continue running other tasks without waiting for the current operation to complete.",javascript,English,FALSE,,
+99,35,How do you handle errors in JavaScript using try-catch-finally blocks?,"""handle errors, JavaScript, try-catch-finally, exception, error handling""","try encloses code that may throw an error, catch handles the error if it occurs, and finally executes code after try-catch regardless of whether an error occurred.",javascript,English,FALSE,,
+100,35,What is the event loop and how does it work with the call stack and task queue in JavaScript?,"""event loop, call stack, task queue, JavaScript, asynchronous, execution""","The event loop continuously checks the call stack and the task queue. If the call stack is empty, it pushes the first task from the queue to the call stack for execution.",javascript,English,FALSE,,
+101,35,How does the this keyword behave in different contexts in JavaScript?,"""this keyword, JavaScript, behavior, context, function, object""","this refers to the context in which a function is called. In global scope, it refers to the global object; in a method, it refers to the object; in a constructor, it refers to the newly created instance.",javascript,English,FALSE,,
+102,35,What are JavaScript modules and how do you use them?,"""JavaScript modules, import, export, encapsulation, modular code""",JavaScript modules allow code to be divided into separate files and exported/imported using export and import keywords for better maintainability and reusability.,javascript,English,FALSE,,
+103,65,What is the purpose of the Reflect API in JavaScript?,"""Reflect API, JavaScript, Reflect, object operations, method, meta-programming""","The Reflect API provides methods for interceptable JavaScript operations, mirroring methods of the Object API but with a more direct way of controlling them.",javascript,English,FALSE,,
+104,65,"What are the differences between Object.freeze(), Object.seal(), and Object.preventExtensions()?","""Object.freeze(), Object.seal(), Object.preventExtensions(), JavaScript, differences, immutability, restrictions""",Object.freeze() makes an object immutable. Object.seal() prevents adding or removing properties but allows modification of existing properties. Object.preventExtensions() prevents adding new properties but allows deletion and modification of existing ones.,javascript,English,FALSE,,
+105,65,Explain the concept of an Immediately Invoked Function Expression (IIFE) and its uses.,"""Immediately Invoked Function Expression, IIFE, JavaScript, function, execution, scope, uses""","An IIFE is a function that runs as soon as it is defined, using the syntax (function() { /* code */ })();. It is used to create a local scope to avoid polluting the global scope.",javascript,English,FALSE,,
+106,65,What is a closure in JavaScript?,"""closure, JavaScript, function, scope, lexical environment, access, variables""","A closure is a function that retains access to its lexical scope, even when the function is executed outside that scope.",javascript,English,FALSE,,
+107,65,"Explain the concept of ""hoisting"" in JavaScript.","""hoisting, JavaScript, variables, functions, declaration, memory, execution""","Hoisting is JavaScript's default behavior of moving declarations to the top of the current scope, making them accessible before the point of declaration.",javascript,English,FALSE,,
+108,65,What is the difference between call and apply methods?,"""call method, apply method, JavaScript, function, arguments, context, difference""","call invokes a function with a given this value and arguments provided individually, while apply does so with arguments provided as an array.",javascript,English,FALSE,,
+109,65,How does event delegation work in JavaScript?,"""event delegation, JavaScript, event handling, bubbling, parent, child elements""","Event delegation uses a single event listener on a parent element to manage events for its child elements, leveraging event bubbling.",javascript,English,FALSE,,
+110,65,What is the purpose of the Promise object in JavaScript?,"""Promise object, JavaScript, asynchronous, handling, resolve, reject, state""",A Promise represents the eventual completion (or failure) of an asynchronous operation and its resulting value.,javascript,English,FALSE,,
+111,65,What is the difference between == and === in JavaScript?,"""==, ===, JavaScript, comparison, equality, type, coercion, strict equality""","""=="" checks for equality after type coercion, whereas === checks for strict equality without type conversion.",javascript,English,FALSE,,
+112,65,What is the use of the let keyword in JavaScript?,"""let keyword, JavaScript, block scope, variables, declaration, ES6""","let is used to declare a block-scoped variable, which can be reassigned.",javascript,English,FALSE,,
+113,50,Write a function to check if a number is even or odd.,,function isEvenOrOdd(num) { return num % 2 === 0 ? 'even' : 'odd'; },javascript,English,TRUE,function isEvenOrOdd(num) { \n // Your code here \n },"[{""input"": ""4"", ""output"": ""even""}, {""input"": ""7"", ""output"": ""odd""}]"
+114,50,Write a function to sum all numbers in an array.,,"function sumArray(arr) { return arr.reduce((a, b) => a + b, 0); }",javascript,English,TRUE,function sumArray(arr) { \n // Your code here \n },"[1, 2, 3, 4, 5]"", ""output"": ""15""}]"
+115,50,Write a function that takes an array and returns a new array with duplicate elements removed.,,,javascript,English,TRUE,"function removeDuplicates(arr) {
     \n // Your code here \n 
 }
 
 ","[{""input"": [1, 2, 2, 3, 4, 4],""output"": [1, 2, 3, 4]}]"
-218,What is a closure in JavaScript?,"A closure is a function that retains access to its lexical scope, even when the function is executed outside that scope.",Javascript,10,FALSE,,
-219,"Explain the concept of ""hoisting"" in JavaScript.","Hoisting is JavaScript's default behavior of moving declarations to the top of the current scope, making them accessible before the point of declaration.",Javascript,10,FALSE,,
-220,What is the difference between call and apply methods?,"call invokes a function with a given this value and arguments provided individually, while apply does so with arguments provided as an array.",Javascript,10,FALSE,,
-221,How does event delegation work in JavaScript?,"Event delegation uses a single event listener on a parent element to manage events for its child elements, leveraging event bubbling.",Javascript,10,FALSE,,
-222,What is the purpose of the Promise object in JavaScript?,A Promise represents the eventual completion (or failure) of an asynchronous operation and its resulting value.,Javascript,10,FALSE,,
-223,What is the difference between == and === in JavaScript?,"""=="" checks for equality after type coercion, whereas === checks for strict equality without type conversion.",Javascript,10,FALSE,,
+116,50,Write a function that takes a string as input and returns the string reversed.,,,javascript,English,TRUE,"function reverseString(str) {
+    }
+
+const result = reverseString(""hello"");
+console.log(result);","{
+    ""input"": ""hello"",
+    ""output"": ""olleh""
+}"
+117,50,Write a function that takes an array of numbers and returns the largest number.,,,javascript,English,TRUE,"function isEven(num) {
+    
+}
+
+const result = isEven(7);
+console.log(result);","{
+    ""input"": 7,
+    ""output"": ""odd""
+}"
+118,50,"Write a function that takes a number as input and returns ""even"" if the number is even and ""odd"" if the number is odd.",,,javascript,English,TRUE,"function findLargest(arr) {
+    
+}
+
+const result = findLargest([1, 5, 3, 9, 2]);
+console.log(result);
+","{
+    ""input"": [1, 5, 3, 9, 2],
+    ""output"": 9
+}
+"
+119,50,Write a function that takes an array of numbers and returns the sum of all the numbers.,,,javascript,English,TRUE,"function sumArray(arr) {
+    
+}
+
+const result = sumArray([1, 2, 3, 4, 5]);
+console.log(result);","{
+    ""input"": [1, 2, 3, 4, 5],
+    ""output"": 15
+}"
+120,15,¿Cómo se escribe un comentario de una sola línea en JavaScript?,"""comentario de una sola línea, JavaScript, //, sintaxis, comentario""","En JavaScript, un comentario de una sola línea se escribe con //.",javascript,Spanish,FALSE,,
+121,15,¿Qué hace el operador === en JavaScript?,"""operador ===, igualdad estricta, comparación, tipo, valor, JavaScript""","El operador === en JavaScript verifica la igualdad estricta, comparando tanto el valor como el tipo.",javascript,Spanish,FALSE,,
+122,15,¿Cómo se crea un array en JavaScript?,"""crear, array, JavaScript, [], elementos, inicialización""",Un array en JavaScript se crea utilizando corchetes [] para definir los elementos.,javascript,Spanish,FALSE,,
+123,15,¿Cómo se obtiene la longitud de una cadena en JavaScript?,"""obtener, longitud, cadena, JavaScript, propiedad length, tamaño, lenght""","Para obtener la longitud de una cadena en JavaScript, se utiliza la propiedad length.",javascript,Spanish,FALSE,,
+124,15,¿Cuál es la diferencia entre null y undefined en JavaScript?,"""null, undefined, JavaScript, diferencia, tipo, valor, ausencia""","null es un valor asignado intencionalmente para indicar la ausencia de valor, mientras que undefined significa que una variable no ha sido inicializada.",javascript,Spanish,FALSE,,
+125,15,¿Cómo se crea una función en JavaScript?,"""crear, función, JavaScript, declaración de función, expresión de función, parentesis, (), function""","En JavaScript, una función se crea usando la palabra clave function seguida de un nombre y paréntesis.",javascript,Spanish,FALSE,,
+126,15,¿Qué hace el método push en un array?,"""método push, array, agregar, elemento, final, JavaScript""",El método push en JavaScript agrega uno o más elementos al final de un array.,javascript,Spanish,FALSE,,
+127,15,¿Cómo se convierte una cadena en un entero en JavaScript?,"""convertir, cadena, entero, JavaScript, parseInt(), Number()""","En JavaScript, puedes convertir una cadena en un entero utilizando parseInt() o Number().",javascript,Spanish,FALSE,,
+128,15,¿Qué es una función anónima en JavaScript?,"""función anónima, JavaScript, función, sin nombre, expresión, callback, argumento, argumentos""",Una función anónima es una función sin nombre que se asigna generalmente a una variable o se pasa como argumento.,javascript,Spanish,FALSE,,
+129,15,¿Cómo puedes crear una copia profunda de un objeto en JavaScript?,"""copia profunda, objeto, JavaScript, JSON.parse(), JSON.stringify(), clonar, referencia""",Puedes crear una copia profunda de un objeto en JavaScript usando JSON.parse() y JSON.stringify().,javascript,Spanish,FALSE,,
+130,35,¿Cuál es el uso de las palabras clave async y await en JavaScript?,"""async, await, JavaScript, asincrónico, promesas, palabras clave, manejo""","async y await se usan en JavaScript para manejar código asincrónico de forma más legible, permitiendo que las promesas se resuelvan antes de continuar con el flujo del código.",javascript,Spanish,FALSE,,
+131,35,¿Qué es el event loop en JavaScript?,"""event loop, JavaScript, asincrónico, tareas, call stack, ejecución, cola""","El event loop en JavaScript es un mecanismo que gestiona la ejecución de tareas asincrónicas, moviendo las tareas de la cola de tareas al stack de llamadas cuando el stack está vacío.",javascript,Spanish,FALSE,,
+132,35,¿Cuál es el propósito del método bind en JavaScript?,"""método bind, JavaScript, bind(), this, función, contexto, método""","El método bind() en JavaScript se usa para crear una nueva función que, cuando se invoca, tiene un valor específico de this.",javascript,Spanish,FALSE,,
+133,35,Explica el concepto de herencia prototípica en JavaScript.,"""herencia prototípica, JavaScript, prototipo, herencia, objetos, cadena""",La herencia prototípica en JavaScript es un sistema en el que los objetos pueden heredar propiedades directamente de otros objetos a través del prototipo.,javascript,Spanish,FALSE,,
+134,35,¿Qué son los generadores en JavaScript y en qué se diferencian de las funciones regulares?,"""generadores, JavaScript, funciones generadoras, yield, funciones regulares, pausar, reanudar""","Los generadores en JavaScript son funciones que pueden pausar su ejecución utilizando yield y reanudarla posteriormente, a diferencia de las funciones regulares que se ejecutan de principio a fin.",javascript,Spanish,FALSE,,
+135,35,¿Cuál es la diferencia entre ejecución síncrona y asíncrona en JavaScript?,"""síncrono, asíncrono, JavaScript, ejecución, diferencia, bloqueo, no bloqueo""","La ejecución síncrona ocurre en secuencia, bloqueando el código hasta que se completa, mientras que la ejecución asíncrona permite que otras tareas se ejecuten mientras una tarea está en progreso.",javascript,Spanish,FALSE,,
+136,35,¿Cómo manejas errores en JavaScript usando bloques try-catch-finally?,"""manejar errores, JavaScript, try-catch-finally, excepción, manejo de errores, error, errores""","Usas bloques try-catch-finally para manejar errores en JavaScript; try ejecuta el código, catch captura cualquier error, y finally ejecuta el código independientemente de si se produjo un error o no.",javascript,Spanish,FALSE,,
+137,35,¿Qué es el event loop y cómo funciona con el stack de llamadas y la cola de tareas en JavaScript?,"""event loop, stack de llamadas, cola de tareas, JavaScript, asincrónico, ejecución, pila, stack, asincrónica, tareas""","El event loop coordina el stack de llamadas y la cola de tareas en JavaScript, moviendo las tareas a la pila cuando la pila está vacía, gestionando la ejecución asincrónica.",javascript,Spanish,FALSE,,
+138,35,¿Cómo se comporta la palabra clave this en diferentes contextos en JavaScript?,"""this, comportamiento, contexto, función, objeto, invoca, función, entorno""","La palabra clave this en JavaScript se refiere al objeto en el contexto en el que se invoca una función, y su valor puede cambiar según el entorno (global, método, función).",javascript,Spanish,FALSE,,
+139,35,¿Qué son los módulos de JavaScript y cómo se utilizan?,"""import, export, importar, exportar, encapsulación, código, modular""",Los módulos de JavaScript son archivos que permiten encapsular código reutilizable. Se utilizan mediante las palabras clave import y export.,javascript,Spanish,FALSE,,
+140,65,¿Cuál es el propósito de la API Reflect en JavaScript?,"""API Reflect, JavaScript, Reflect, operaciones de objeto, método, metaprogramación""","La API Reflect en JavaScript proporciona métodos para interactuar con los objetos, facilitando operaciones como la manipulación de propiedades de manera más fácil y coherente.",javascript,Spanish,FALSE,,
+141,65,"¿Cuáles son las diferencias entre Object.freeze(), Object.seal() y Object.preventExtensions() en JavaScript?","""Object.freeze(), Object.seal(), Object.preventExtensions(), diferencias, inmutabilidad, restricciones""",Object.freeze() inmoviliza completamente un objeto; Object.seal() previene la adición o eliminación de propiedades; Object.preventExtensions() evita solo la adición de nuevas propiedades.,javascript,Spanish,FALSE,,
+142,65,Explica el concepto de una Expresión de Función Ejecutada Inmediatamente (IIFE) y sus usos.,"""Expresión, Función, Ejecutada, Inmediatamente, IIFE, contaminación, función, ejecución, ámbito, usos""",Una IIFE es una función en JavaScript que se ejecuta inmediatamente después de su definición. Se usa comúnmente para evitar la contaminación del ámbito global.,javascript,Spanish,FALSE,,
+143,65,¿Qué es un closure en JavaScript?,"""closure, JavaScript, función, ámbito, entorno léxico, acceso, variables, recuerda, recordar""","Un closure en JavaScript es una función que recuerda el ámbito en el que fue creada, incluso después de que ese ámbito haya terminado.",javascript,Spanish,FALSE,,
+144,65,"Explica el concepto de ""hoisting"" en JavaScript.","""hoisting, comportamiento, contexto, antes, variables, funciones, declaración, memoria, ejecución""","El ""hoisting"" en JavaScript es el comportamiento por el cual las declaraciones de variables y funciones se mueven al principio de su contexto de ejecución antes de que se ejecute el código.",javascript,Spanish,FALSE,,
+145,65,¿Cuál es la diferencia entre los métodos call y apply en JavaScript?,"""método call, método apply, JavaScript, función, argumentos, contexto, diferencia""","call y apply en JavaScript invocan funciones con un contexto específico, pero call acepta una lista de argumentos, mientras que apply acepta un array.",javascript,Spanish,FALSE,,
+146,65,¿Cómo funciona la delegación de eventos en JavaScript?,"""delegación, JavaScript, manejo de eventos, burbujeo, elemento padre, elemento hijo""","La delegación de eventos en JavaScript permite que un evento manejado por un elemento padre responda a eventos disparados por sus hijos, aprovechando la propagación del evento.",javascript,Spanish,FALSE,,
+147,65,Cuál es el propósito del objeto Promise en JavaScript?,"""objeto, Promise, espera, asincrónico, manejo, resolver, rechazar, estado, promesa, promete""","El objeto Promise en JavaScript se utiliza para manejar operaciones asincrónicas, permitiendo que el código espere hasta que una operación se complete o falle.",javascript,Spanish,FALSE,,
+148,65,¿Cuál es la diferencia entre == y === en JavaScript?,"""==, ===, JavaScript, comparación, igualdad, tipo, coerción, igualdad estricta""","""=="" compara los valores con coerción de tipos, mientras que === compara tanto el valor como el tipo sin coerción.",javascript,Spanish,FALSE,,
+149,65,¿Cuál es el uso de la palabra clave let en JavaScript?,"""palabra clave let, var, ámbito, bloque, variables, declaración, ES6, declarar""","La palabra clave let en JavaScript declara variables con un ámbito de bloque, reemplazando la funcionalidad limitada de var.",javascript,Spanish,FALSE,,
+150,15,¿Cómo se declara una variable en Java?,"""declarar variable, Java, tipo, nombre, sintaxis""",Se declara especificando el tipo seguido del nombre de la variable.,java,Spanish,FALSE,,
+151,15,¿Cómo se escribe un comentario de una sola línea en Java?,"""comentario de una sola línea, Java, //, sintaxis, comentario""",Se escribe con // al inicio de la línea.,java,Spanish,FALSE,,
+152,15,¿Cómo se inicializa un array en Java?,"""array, inicializar, new, tipo de dato, tamaño, Java""",Se inicializa usando new seguido del tipo de dato y el tamaño del array.,java,Spanish,FALSE,,
+153,15,¿Qué es el método main en Java?,"""método main, Java, punto de entrada, programa""",El método main es el punto de entrada de un programa Java.,java,Spanish,FALSE,,
+154,15,¿Cómo se imprime texto en Java?,"""imprimir texto, System.out.println(), Java, salida""",Se utiliza el método System.out.println().,java,Spanish,FALSE,,
+155,15,¿Qué palabra clave se usa para heredar una clase en Java?,"""herencia, extends, clase, Java, palabra clave""",La palabra clave extends se usa para heredar una clase en Java.,java,Spanish,FALSE,,
+156,15,¿Qué es una variable estática en Java?,"""variable estática, clase, instancia, Java, static""",Una variable estática pertenece a la clase en lugar de a las instancias de la clase.,java,Spanish,FALSE,,
+157,15,How do you declare a variable in Java?,"""declare variable, Java, type, name, syntax""",You declare it by specifying the type followed by the variable name.,java,English,FALSE,,
+158,15,How do you write a single-line comment in Java?,"""single-line comment, Java, //, syntax, comment""",You write it by using // at the beginning of the line.,java,English,FALSE,,
+159,15,How do you initialize an array in Java?,"""array, initialize, new, data type, size, Java""",You initialize it using new followed by the data type and the size of the array.,java,English,FALSE,,
+160,15,What is the main method in Java?,"""main method, Java, entry point, program""",The main method is the entry point of a Java program.,java,English,FALSE,,
+161,15,How do you print text in Java?,"""print text, System.out.println(), Java, output""",You use the System.out.println() method.,java,English,FALSE,,
+162,15,What keyword is used to inherit a class in Java?,"""inheritance, extends, class, Java, keyword""",The extends keyword is used to inherit a class in Java.,java,English,FALSE,,
+163,15,What is a static variable in Java?,"""static variable, class, instance, Java, static""",A static variable belongs to the class instead of the instances of the class.,java,English,FALSE,,
+164,35,What is the difference between == and equals() in Java?,"""==, equals(), comparison, memory reference, object equality, Java""","""=="" checks if two object references point to the same memory location, while equals() checks if two objects are meaningfully equivalent.",java,English,FALSE,,
+165,35,How does exception handling work in Java?,"""exception handling, try, catch, finally, throw, runtime errors, Java""","Exception handling in Java is done using try, catch, finally blocks and throw to handle runtime errors without crashing the program.",java,English,FALSE,,
+166,35,What is the difference between an abstract class and an interface in Java?,"""abstract class, interface, abstract methods, concrete methods, Java, differences""","An abstract class can have both abstract and concrete methods, while an interface can only have abstract methods (prior to Java 8) and now default and static methods.",java,English,FALSE,,
+167,35,What is the purpose of the final keyword in Java?,"""final keyword, Java, constants, prevent overriding, prevent inheritance""","The final keyword in Java is used to define constants, prevent method overriding, or prevent inheritance of a class.",java,English,FALSE,,
+168,35,What is a HashMap in Java and how does it work?,"""HashMap, Java, key-value pairs, hashing, collection, access, insert, remove""","A HashMap is a collection that stores key-value pairs and uses hashing to quickly access, insert, and remove elements.",java,English,FALSE,,
+169,35,What is garbage collection in Java?,"""garbage collection, Java, memory management, reclaim memory, unused objects""",Garbage collection is the process by which Java automatically reclaims memory by removing objects that are no longer in use.,java,English,FALSE,,
+170,35,What are StringBuilder and StringBuffer in Java and how do they differ?,"""StringBuilder, StringBuffer, mutable strings, thread-safe, Java, differences""","StringBuilder and StringBuffer are used for creating mutable strings, but StringBuffer is thread-safe while StringBuilder is not.",java,English,FALSE,,
+171,35,What is a static block in Java?,"""static block, Java, initialize, static variables, class, memory""",A static block is used to initialize static variables and is executed when the class is first loaded into memory.,java,English,FALSE,,
+172,35,What is the use of the transient keyword in Java?,"""transient keyword, Java, serialization, variable, object persistence""",The transient keyword is used to indicate that a variable should not be serialized when the object is persisted.,java,English,FALSE,,
+173,35,¿Qué es la sobrecarga de métodos en Java?,"""sobrecarga de métodos, Java, múltiples métodos, mismo nombre, diferentes parámetros""",La sobrecarga de métodos permite que una clase tenga múltiples métodos con el mismo nombre pero diferentes listas de parámetros.,java,Spanish,FALSE,,
+174,35,¿Cuál es la diferencia entre == y equals() en Java?,"""==, equals(), comparación, referencia de memoria, igualdad de objetos, Java""","""=="" verifica si dos referencias de objetos apuntan a la misma ubicación de memoria, mientras que equals() verifica si dos objetos son significativamente equivalentes.",java,Spanish,FALSE,,
+175,35,¿Cómo funciona el manejo de excepciones en Java?,"""manejo de excepciones, try, catch, finally, throw, errores en tiempo de ejecución, Java""","El manejo de excepciones en Java se realiza utilizando los bloques try, catch, finally y throw para manejar errores en tiempo de ejecución sin que el programa se cierre.",java,Spanish,FALSE,,
+176,35,¿Cuál es la diferencia entre una clase abstracta y una interfaz en Java?,"""clase abstracta, interfaz, métodos abstractos, métodos concretos, Java, diferencias""","Una clase abstracta puede tener tanto métodos abstractos como concretos, mientras que una interfaz solo puede tener métodos abstractos (antes de Java 8), aunque ahora también puede tener métodos por defecto y estáticos.",java,Spanish,FALSE,,
+177,35,¿Cuál es el propósito de la palabra clave final en Java?,"""palabra clave final, Java, constantes, evitar sobrescritura, evitar herencia""","La palabra clave final en Java se usa para definir constantes, evitar la sobrescritura de métodos o prevenir la herencia de una clase.",java,Spanish,FALSE,,
+178,35,¿Qué es un HashMap en Java y cómo funciona?,"""HashMap, Java, pares clave-valor, hashing, colección, acceso, insertar, eliminar""","Un HashMap es una colección que almacena pares clave-valor y usa hashing para acceder, insertar y eliminar elementos rápidamente.",java,Spanish,FALSE,,
+179,35,¿Qué es la recolección de basura (garbage collection) en Java?,"""recolección de basura, Java, gestión de memoria, recuperar memoria, objetos no utilizados""",La recolección de basura es el proceso mediante el cual Java recupera automáticamente la memoria eliminando los objetos que ya no se utilizan.,java,Spanish,FALSE,,
+180,35,¿Qué son StringBuilder y StringBuffer en Java y en qué se diferencian?,"""StringBuilder, StringBuffer, cadenas mutables, thread-safe, Java, diferencias""","StringBuilder y StringBuffer se usan para crear cadenas mutables, pero StringBuffer es seguro para hilos (thread-safe) mientras que StringBuilder no lo es.",java,Spanish,FALSE,,
+181,35,¿Qué es un bloque estático en Java?,"""bloque estático, Java, inicializar, variables estáticas, clase, memoria""",Un bloque estático se utiliza para inicializar variables estáticas y se ejecuta cuando la clase se carga por primera vez en la memoria.,java,Spanish,FALSE,,
+182,35,¿Cuál es el uso de la palabra clave transient en Java?,"""palabra clave transient, Java, serialización, variable, persistencia de objetos""",La palabra clave transient se utiliza para indicar que una variable no debe ser serializada cuando el objeto se persiste.,java,Spanish,FALSE,,
+183,65,¿Qué es la concurrencia en Java y cómo se gestiona con hilos (threads)?,"""concurrencia, hilos, Java, Thread, Runnable, ejecución paralela, gestión""",La concurrencia en Java permite la ejecución simultánea de múltiples hilos de manera paralela. Se gestiona con la clase Thread y la interfaz Runnable.,java,Spanish,FALSE,,
+184,65,¿Qué es la sincronización y cómo se implementa en Java?,"""sincronización, Java, hilos, recursos compartidos, synchronized, concurrencia""",La sincronización en Java se utiliza para controlar el acceso a recursos compartidos por múltiples hilos. Se implementa utilizando la palabra clave synchronized.,java,Spanish,FALSE,,
+185,65,¿Qué son los bloqueos (deadlocks) y cómo se pueden evitar en Java?,"""deadlock, bloqueo, hilos, Java, recursos, evitar, tryLock, orden de bloqueo""",Un deadlock ocurre cuando dos o más hilos están bloqueados indefinidamente esperando recursos que otros hilos poseen. Se puede evitar utilizando técnicas como el orden de bloqueo o tryLock.,java,Spanish,FALSE,,
+186,65,¿Qué es el concepto de volatile en Java y cuándo se utiliza?,"""volatile, Java, memoria principal, caché, visibilidad, hilos, concurrencia""","La palabra clave volatile en Java se utiliza para garantizar que las variables sean leídas directamente de la memoria principal y no de la caché, asegurando la visibilidad de los cambios entre hilos.",java,Spanish,FALSE,,
+187,65,¿Qué es la reflexión (Reflection) en Java y cómo se utiliza?,"""reflexión, Reflection, Java, tiempo de ejecución, inspección, manipulación, API, java.lang.reflect""","La reflexión en Java permite inspeccionar y manipular clases, métodos y campos en tiempo de ejecución, utilizando la API java.lang.reflect.",java,Spanish,FALSE,,
+188,65,¿Qué es el patrón Singleton y cómo se implementa de manera segura en Java?,"""patrón Singleton, Java, instancia única, sincronización, clase interna estática, diseño""","El patrón Singleton garantiza que una clase tenga solo una instancia. En Java, se puede implementar de manera segura utilizando sincronización o una clase interna estática.",java,Spanish,FALSE,,
+189,65,¿Qué es un CompletableFuture en Java y cómo difiere de un Future?,"""CompletableFuture, Future, Java, asincronía, encadenar tareas, excepciones, programación reactiva""",CompletableFuture es una extensión de Future que permite encadenar tareas asíncronas y manejar excepciones de manera más flexible. También soporta programación reactiva.,java,Spanish,FALSE,,
+190,65,¿Cómo funciona el recolector de basura (Garbage Collector) en la JVM y cuáles son sus tipos?,"""Garbage Collector, JVM, Java, recolección de basura, memoria, Serial, Parallel, CMS, G1""","El Garbage Collector en la JVM gestiona la memoria automáticamente eliminando objetos no utilizados. Los tipos incluyen Serial, Parallel, CMS y G1.",java,Spanish,FALSE,,
+191,65,¿Cómo se implementa la programación funcional en Java usando Streams y Lambda Expressions?,"""programación funcional, Java, Streams, Lambda Expressions, colecciones, funciones anónimas, procesamiento declarativo""","La programación funcional en Java se implementa mediante Streams para procesar colecciones de manera declarativa, y con Lambda Expressions para crear funciones anónimas más concisas.",java,Spanish,FALSE,,
+192,65,¿Qué es la serialización en Java y cómo se utiliza Serializable y Externalizable?,"""serialización, Java, Serializable, Externalizable, flujo de bytes, almacenamiento, transmisión""","La serialización en Java convierte un objeto en un flujo de bytes para almacenarlo o transmitirlo. Serializable permite la serialización automática, mientras que Externalizable permite un control más detallado sobre el proceso.",java,Spanish,FALSE,,
+193,65,What is concurrency in Java and how is it managed with threads?,"""concurrency, threads, Java, Thread, Runnable, parallel execution, management""",Concurrency in Java allows simultaneous execution of multiple threads. It is managed with the Thread class and the Runnable interface.,java,English,FALSE,,
+194,65,What is synchronization and how is it implemented in Java?,"""synchronization, Java, threads, shared resources, synchronized, concurrency""",Synchronization in Java is used to control access to shared resources by multiple threads. It is implemented using the synchronized keyword.,java,English,FALSE,,
+195,65,What are deadlocks and how can they be avoided in Java?,"""deadlock, lock, threads, Java, resources, avoid, tryLock, lock ordering""","A deadlock occurs when two or more threads are blocked indefinitely, waiting for resources held by other threads. It can be avoided using techniques like lock ordering or tryLock.",java,English,FALSE,,
+196,65,What is the concept of volatile in Java and when is it used?,"""volatile, Java, main memory, cache, visibility, threads, concurrency""","The volatile keyword in Java ensures that variables are read directly from main memory, not from the cache, ensuring visibility of changes between threads.",java,English,FALSE,,
+197,65,What is Reflection in Java and how is it used?,"""Reflection, Java, runtime, inspection, manipulation, API, java.lang.reflect""","Reflection in Java allows inspection and manipulation of classes, methods, and fields at runtime, using the java.lang.reflect API.",java,English,FALSE,,
+198,65,What is the Singleton pattern and how is it safely implemented in Java?,"""Singleton pattern, Java, single instance, synchronization, static inner class, design""","The Singleton pattern ensures that a class has only one instance. In Java, it can be safely implemented using synchronization or a static inner class.",java,English,FALSE,,
+199,65,What is a CompletableFuture in Java and how does it differ from a Future?,"""CompletableFuture, Future, Java, asynchronous, task chaining, exceptions, reactive programming""",CompletableFuture extends Future by allowing asynchronous task chaining and better exception handling. It also supports reactive programming.,java,English,FALSE,,
+200,65,How does the Garbage Collector work in the JVM and what are its types?,"""Garbage Collector, JVM, Java, memory management, garbage collection, Serial, Parallel, CMS, G1""","The Garbage Collector in the JVM automatically manages memory by removing unused objects. Types include Serial, Parallel, CMS, and G1.",java,English,FALSE,,
+201,65,How is functional programming implemented in Java using Streams and Lambda Expressions?,"""functional programming, Java, Streams, Lambda Expressions, collections, anonymous functions, declarative processing""",Functional programming in Java is implemented using Streams to process collections declaratively and Lambda Expressions to create concise anonymous functions.,java,English,FALSE,,
+202,65,What is serialization in Java and how are Serializable and Externalizable used?,"""serialization, Java, Serializable, Externalizable, byte stream, storage, transmission""","Serialization in Java converts an object into a byte stream for storage or transmission. Serializable allows automatic serialization, while Externalizable provides more control over the process.",java,English,FALSE,,
+203,15,¿Cómo se declara una variable en C#?,"""declarar variable, C#, tipo de dato, nombre, sintaxis""",Una variable en C# se declara especificando el tipo de dato seguido del nombre de la variable.,c#,Spanish,FALSE,,
+204,15,¿Qué es una clase en C#?,"""clase, C#, plantilla, estructura, objeto, atributos, métodos""",Una clase en C# es una plantilla o estructura que define los atributos y métodos de un objeto.,c#,Spanish,FALSE,,
+205,15,¿Qué es un objeto en C#?,"""objeto, instancia, clase, C#, entidad, datos, comportamiento""","Un objeto es una instancia de una clase, que representa una entidad con datos y comportamiento.",c#,Spanish,FALSE,,
+206,15,¿Cómo se escribe un comentario de una sola línea en C#?,"""comentario de una sola línea, C#, //, sintaxis, comentario""",Un comentario de una sola línea en C# se escribe con // al inicio de la línea.,c#,Spanish,FALSE,,
+207,15,¿Cómo se imprime texto en la consola en C#?,"""imprimir texto, Console.WriteLine(), C#, consola""","En C#, se usa Console.WriteLine() para imprimir texto en la consola.",c#,Spanish,FALSE,,
+208,15,¿Qué es un constructor en C#?,"""constructor, C#, método especial, inicializar, objetos, clase""",Un constructor en C# es un método especial que se utiliza para inicializar objetos de una clase.,c#,Spanish,FALSE,,
+209,15,¿Qué es un array en C#?,"""array, C#, colección, elementos, mismo tipo, memoria contigua""",Un array en C# es una colección de elementos del mismo tipo almacenados en ubicaciones contiguas en memoria.,c#,Spanish,FALSE,,
+210,15,¿Qué palabra clave se usa para heredar una clase en C#?,"""herencia, palabra clave, C#, base, clase, heredar""",La palabra clave : base se utiliza en C# para heredar una clase.,c#,Spanish,FALSE,,
+211,15,¿Cómo se declara una constante en C#?,"""declarar constante, C#, const, palabra clave, tipo, valor""","En C#, una constante se declara utilizando la palabra clave const seguida del tipo y el valor.",c#,Spanish,FALSE,,
+212,15,¿Qué es un espacio de nombres (namespace) en C#?,"""namespace, C#, espacio de nombres, organizar, clases, tipos""",Un espacio de nombres en C# es una forma de organizar clases y otros tipos en grupos lógicos.,c#,Spanish,FALSE,,
+213,15,How do you declare a variable in C#?,"""declare variable, C#, data type, name, syntax""",A variable in C# is declared by specifying the data type followed by the variable name.,c#,English,FALSE,,
+214,15,What is a class in C#?,"""class, C#, blueprint, structure, object, attributes, methods""",A class in C# is a blueprint or structure that defines the attributes and methods of an object.,c#,English,FALSE,,
+215,15,What is an object in C#?,"""object, instance, class, C#, entity, data, behavior""","An object is an instance of a class, representing an entity with data and behavior.",c#,English,FALSE,,
+216,15,How do you write a single-line comment in C#?,"""single-line comment, C#, //, syntax, comment""",A single-line comment in C# is written using // at the beginning of the line.,c#,English,FALSE,,
+217,15,How do you print text to the console in C#?,"""print text, Console.WriteLine(), C#, console""","In C#, Console.WriteLine() is used to print text to the console.",c#,English,FALSE,,
+218,15,What is a constructor in C#?,"""constructor, C#, special method, initialize, objects, class""",A constructor in C# is a special method used to initialize objects of a class.,c#,English,FALSE,,
+219,15,What is an array in C#?,"""array, C#, collection, elements, same type, contiguous memory""",An array in C# is a collection of elements of the same type stored in contiguous memory locations.,c#,English,FALSE,,
+220,15,What keyword is used to inherit a class in C#?,"""inheritance, keyword, C#, base, class, inherit""",The keyword : base is used in C# to inherit a class.,c#,English,FALSE,,
+221,15,How do you declare a constant in C#?,"""declare constant, C#, const, keyword, type, value""","In C#, a constant is declared using the const keyword followed by the type and value.",c#,English,FALSE,,
+222,15,What is a namespace in C#?,"""namespace, C#, organize, classes, types, logical groups""",A namespace in C# is a way to organize classes and other types into logical groups.,c#,English,FALSE,,
+223,15,How do you declare a variable in Python?,"""declare variable, Python, assign value, no data type""","In Python, you declare a variable by simply assigning a value to it without specifying a data type.",python,English,FALSE,,
+224,15,What is a list in Python?,"""list, Python, collection, elements, square brackets, []""",A list in Python is a collection of elements that can store multiple items in a single variable and is defined using square brackets [].,python,English,FALSE,,
+225,15,How do you write a single-line comment in Python?,"""single-line comment, Python, #, syntax, comment""",A single-line comment in Python is written using the # symbol at the beginning of the line.,python,English,FALSE,,
+226,15,How do you print output to the console in Python?,"""print output, Python, print(), console""","In Python, you use the print() function to display output to the console.",python,English,FALSE,,
+227,15,What is a function in Python?,"""function, Python, reusable code, def, block of code""",A function in Python is a block of reusable code that performs a specific task and is defined using the def keyword.,python,English,FALSE,,
+228,15,What is a dictionary in Python?,"""dictionary, Python, key-value pairs, curly braces, {}""","A dictionary in Python is a collection of key-value pairs, where each key is unique, and it is defined using curly braces {}.",python,English,FALSE,,
+229,15,What is a tuple in Python?,"""tuple, Python, immutable, ordered, parentheses, ()""","A tuple in Python is an immutable collection of ordered elements, defined using parentheses ().",python,English,FALSE,,
+230,15,How do you check the type of a variable in Python?,"""check type, Python, type(), data type, variable""",You use the type() function to check the data type of a variable in Python.,python,English,FALSE,,
+231,15,What is a for loop in Python?,"""for loop, Python, iterate, sequence, list, string, block of code""",A for loop in Python is used to iterate over a sequence (like a list or a string) and execute a block of code for each element.,python,English,FALSE,,
+232,15,What is indentation in Python?,"""indentation, Python, block of code, loops, functions, conditionals""","Indentation in Python is used to define the block of code for loops, functions, and conditionals, as Python relies on indentation instead of braces.",python,English,FALSE,,
+233,15,¿Cómo se declara una variable en Python?,"""declarar variable, Python, asignar valor, sin tipo de dato""","En Python, se declara una variable simplemente asignándole un valor, sin necesidad de especificar el tipo de dato.",python,Spanish,FALSE,,
+234,15,¿Qué es una lista en Python?,"""lista, Python, colección, elementos, corchetes, []""",Una lista en Python es una colección de elementos que puede almacenar múltiples valores en una sola variable y se define usando corchetes [].,python,Spanish,FALSE,,
+235,15,¿Cómo se escribe un comentario de una sola línea en Python?,"""comentario de una sola línea, Python, #, sintaxis, comentario""",Un comentario de una sola línea en Python se escribe usando el símbolo # al inicio de la línea.,python,Spanish,FALSE,,
+236,15,¿Cómo se imprime una salida en la consola en Python?,"""imprimir salida, Python, print(), consola""","En Python, se utiliza la función print() para mostrar la salida en la consola.",python,Spanish,FALSE,,
+237,15,¿Qué es una función en Python?,"""función, Python, código reutilizable, def, bloque de código""",Una función en Python es un bloque de código reutilizable que realiza una tarea específica y se define con la palabra clave def.,python,Spanish,FALSE,,
+238,15,¿Qué es un diccionario en Python?,"""diccionario, Python, pares clave-valor, llaves, {}""","Un diccionario en Python es una colección de pares clave-valor, donde cada clave es única, y se define usando llaves {}.",python,Spanish,FALSE,,
+239,15,¿Qué es una tupla en Python?,"""tupla, Python, inmutable, ordenada, paréntesis, ()""","Una tupla en Python es una colección inmutable de elementos ordenados, definida usando paréntesis ().",python,Spanish,FALSE,,
+240,15,¿Cómo se verifica el tipo de una variable en Python?,"""verificar tipo, Python, type(), tipo de dato, variable""","En Python, se usa la función type() para verificar el tipo de dato de una variable.",python,Spanish,FALSE,,
+241,15,¿Qué es un bucle for en Python?,"""bucle for, Python, iterar, secuencia, lista, cadena, bloque de código""",Un bucle for en Python se utiliza para iterar sobre una secuencia (como una lista o cadena) y ejecutar un bloque de código por cada elemento.,python,Spanish,FALSE,,
+242,15,¿Qué es la indentación en Python?,"""indentación, Python, bloque de código, bucles, funciones, condicionales""","La indentación en Python se usa para definir bloques de código en bucles, funciones y condicionales, ya que Python depende de la indentación en lugar de llaves.",python,Spanish,FALSE,,
+243,15,¿Cómo se declara una variable en C?,"""declarar variable, C, tipo de dato, nombre, sintaxis""","En C, una variable se declara especificando primero el tipo de dato seguido del nombre de la variable.",c,Spanish,FALSE,,
+244,15,¿Cómo se imprime texto en la consola en C?,"""imprimir texto, C, printf(), consola""","En C, se utiliza la función printf() para imprimir texto en la consola.",c,Spanish,FALSE,,
+245,15,¿Qué es un puntero en C?,"""puntero, C, dirección de memoria, variable, apuntador""",Un puntero es una variable que almacena la dirección de memoria de otra variable.,c,Spanish,FALSE,,
+246,15,¿Qué es un array en C?,"""array, C, colección, elementos, tipo de dato, memoria contigua""",Un array en C es una colección de elementos del mismo tipo de dato almacenados en ubicaciones contiguas en memoria.,c,Spanish,FALSE,,
+247,15,¿Cómo se escribe un comentario de una sola línea en C?,"""comentario de una sola línea, C, //, sintaxis, comentario""",Un comentario de una sola línea en C se escribe usando // al inicio de la línea.,c,Spanish,FALSE,,
+248,15,¿Qué es un ciclo for en C?,"""ciclo for, C, iterar, bloque de código, número de veces""",Un ciclo for en C se utiliza para iterar un bloque de código un número determinado de veces.,c,Spanish,FALSE,,
+249,15,¿Qué es un if en C?,"""if, C, estructura condicional, bloque de código, condición verdadera""",Un if en C es una estructura condicional que ejecuta un bloque de código si una condición es verdadera.,c,Spanish,FALSE,,
+250,15,¿Qué es un bucle while en C?,"""bucle while, C, repetir, condición verdadera, bloque de código""",Un bucle while en C repite un bloque de código mientras una condición sea verdadera.,c,Spanish,FALSE,,
+251,15,¿Qué es una función en C?,"""función, C, bloque de código, reutilizable, tarea, retornar valor""",Una función en C es un bloque de código reutilizable que realiza una tarea específica y puede retornar un valor.,c,Spanish,FALSE,,
+252,15,¿Qué es un archivo de cabecera en C?,"""archivo de cabecera, C, definiciones, funciones, macros, #include""",Un archivo de cabecera en C contiene definiciones de funciones y macros que se incluyen en otros archivos mediante la directiva #include.,c,Spanish,FALSE,,
+253,15,How do you declare a variable in C?,"""declare variable, C, data type, name, syntax""","In C, a variable is declared by specifying the data type first, followed by the variable name.",c,English,FALSE,,
+254,15,How do you print text to the console in C?,"""print text, C, printf(), console""","In C, the printf() function is used to print text to the console.",c,English,FALSE,,
+255,15,What is a pointer in C?,"""pointer, C, memory address, variable, reference""",A pointer is a variable that stores the memory address of another variable.,c,English,FALSE,,
+256,15,What is an array in C?,"""array, C, collection, elements, data type, contiguous memory""",An array in C is a collection of elements of the same data type stored in contiguous memory locations.,c,English,FALSE,,
+257,15,How do you write a single-line comment in C?,"""single-line comment, C, //, syntax, comment""",A single-line comment in C is written using // at the beginning of the line.,c,English,FALSE,,
+258,15,What is a for loop in C?,"""for loop, C, iterate, block of code, specified times""",A for loop in C is used to iterate over a block of code a specified number of times.,c,English,FALSE,,
+259,15,What is an if statement in C?,"""if statement, C, conditional structure, block of code, true condition""",An if statement in C is a conditional structure that executes a block of code if a condition is true.,c,English,FALSE,,
+260,15,What is a while loop in C?,"""while loop, C, repeat, true condition, block of code""",A while loop in C repeats a block of code as long as a condition is true.,c,English,FALSE,,
+261,15,What is a function in C?,"""function, C, reusable block of code, task, return value""",A function in C is a reusable block of code that performs a specific task and can return a value.,c,English,FALSE,,
+262,15,What is a header file in C?,"""header file, C, function definitions, macros, #include""",A header file in C contains function definitions and macros that are included in other files using the #include directive.,c,English,FALSE,,
+263,15,¿Cómo se declara una variable en C++?,"""declarar variable, C++, tipo de dato, nombre, sintaxis""","En C++, una variable se declara especificando primero el tipo de dato seguido del nombre de la variable.",c++,Spanish,FALSE,,
+264,15,¿Cómo se imprime texto en la consola en C++?,"""imprimir texto, C++, std::cout, operador <<, consola""","En C++, se utiliza std::cout junto con el operador << para imprimir texto en la consola.",c++,Spanish,FALSE,,
+265,15,¿Qué es un puntero en C++?,"""puntero, C++, dirección de memoria, variable, apuntador""",Un puntero es una variable que almacena la dirección de memoria de otra variable.,c++,Spanish,FALSE,,
+266,15,¿Qué es un array en C++?,"""array, C++, colección, elementos, tipo de dato, memoria contigua""",Un array en C++ es una colección de elementos del mismo tipo de dato almacenados en ubicaciones contiguas en memoria.,c++,Spanish,FALSE,,
+267,15,¿Cómo se escribe un comentario de una sola línea en C++?,"""comentario de una sola línea, C++, //, sintaxis, comentario""",Un comentario de una sola línea en C++ se escribe usando // al inicio de la línea.,c++,Spanish,FALSE,,
+268,15,¿Qué es un ciclo for en C++?,"""ciclo for, C++, iterar, bloque de código, número de veces""",Un ciclo for en C++ se utiliza para iterar un bloque de código un número determinado de veces.,c++,Spanish,FALSE,,
+269,15,¿Qué es un if en C++?,"""if, C++, estructura condicional, bloque de código, condición verdadera""",Un if en C++ es una estructura condicional que ejecuta un bloque de código si una condición es verdadera.,c++,Spanish,FALSE,,
+270,15,¿Qué es un bucle while en C++?,"""bucle while, C++, repetir, condición verdadera, bloque de código""",Un bucle while en C++ repite un bloque de código mientras una condición sea verdadera.,c++,Spanish,FALSE,,
+271,15,¿Qué es una función en C++?,"""función, C++, bloque de código, reutilizable, tarea, retornar valor""",Una función en C++ es un bloque de código reutilizable que realiza una tarea específica y puede retornar un valor.,c++,Spanish,FALSE,,
+272,15,¿Qué es un archivo de cabecera en C++?,"""archivo de cabecera, C++, definiciones, funciones, macros, #include""",Un archivo de cabecera en C++ contiene definiciones de funciones y macros que se incluyen en otros archivos mediante la directiva #include.,c++,Spanish,FALSE,,
+273,15,How do you declare a variable in C++?,"""declare variable, C++, data type, name, syntax""","In C++, a variable is declared by specifying the data type first, followed by the variable name.",c++,English,FALSE,,
+274,15,How do you print text to the console in C++?,"""print text, C++, std::cout, operator <<, console""","In C++, std::cout along with the << operator is used to print text to the console.",c++,English,FALSE,,
+275,15,What is a pointer in C++?,"""pointer, C++, memory address, variable, reference""",A pointer is a variable that stores the memory address of another variable.,c++,English,FALSE,,
+276,15,What is an array in C++?,"""array, C++, collection, elements, data type, contiguous memory""",An array in C++ is a collection of elements of the same data type stored in contiguous memory locations.,c++,English,FALSE,,
+277,15,How do you write a single-line comment in C++?,"""single-line comment, C++, //, syntax, comment""",A single-line comment in C++ is written using // at the beginning of the line.,c++,English,FALSE,,
+278,15,What is a for loop in C++?,"""for loop, C++, iterate, block of code, specified number of times""",A for loop in C++ is used to iterate over a block of code a specified number of times.,c++,English,FALSE,,
+279,15,What is an if statement in C++?,"""if statement, C++, conditional structure, block of code, true condition""",An if statement in C++ is a conditional structure that executes a block of code if a condition is true.,c++,English,FALSE,,
+280,15,A while loop in C++ repeats a block of code as long as a condition is true.,"""while loop, C++, repeat, true condition, block of code""",A while loop in C++ repeats a block of code as long as a condition is true.,c++,English,FALSE,,
+281,15,What is a function in C++?,"""function, C++, reusable block of code, task, return value""",A function in C++ is a reusable block of code that performs a specific task and can return a value.,c++,English,FALSE,,
+282,15,What is a header file in C++?,"""header file, C++, function definitions, macros, #include""",A header file in C++ contains function definitions and macros that are included in other files using the #include directive.,c++,English,FALSE,,
+283,25,"¿Cuál es el resultado de la ejecución de este código?
+int x = 8;
+int y = 3;
+printf(""%d"", x / y);
+","""2""",2,c,Spanish,FALSE,,
+284,25,"¿Cuál es el resultado de la ejecución de este código?
+char name[] = ""Luis"";
+printf(""Hola, %s"", name);
+","""Hola, Luis""","""Hola, Luis""",c,Spanish,FALSE,,
+285,25,"¿Cuál es el resultado de la ejecución de este código?
+int result = 6 < 10;
+printf(""%d"", result);
+","""1, true""",1,c,Spanish,FALSE,,
+286,25,"¿Cuál es el resultado de la ejecución de este código?
+int arr[] = {2, 4, 6, 8};
+printf(""%d"", arr[3]);
+","""8""",8,c,Spanish,FALSE,,
+287,25,"¿Cuál es el resultado de la ejecución de este código?
+float x = 5.7;
+int y = (int)x;
+printf(""%d"", y);
+","""5""",5,c,Spanish,FALSE,,
+288,25,"¿Cuál es el resultado de la ejecución de este código?
+int a = 10;
+int b = 4;
+printf(""%d"", a % b);
+","""2""",2,c,Spanish,FALSE,,
+289,25,"¿Cuál es el resultado de la ejecución de este código?
+char str[] = ""Code"";
+printf(""%d"", sizeof(str));
+","""5""",5,c,Spanish,FALSE,,
+290,25,"¿Cuál es el resultado de la ejecución de este código?
+int x = 5;
+x += 10;
+printf(""%d"", x);
+","""15""",15,c,Spanish,FALSE,,
+291,25,"¿Cuál es el resultado de la ejecución de este código?
+char colors[3][10] = {""red"", ""blue"", ""green""};
+printf(""%s"", colors[1]);
+","""blue""","""blue""",c,Spanish,FALSE,,
+292,25,"¿Cuál es el resultado de la ejecución de este código?
+int a = 0;
+if(a)
+    printf(""True"");
+else
+    printf(""False"");
+","""false, 0""","""False""",c,Spanish,FALSE,,
+293,25,"What is the result of running this code?
+int x = 8;
+int y = 3;
+printf(""%d"", x / y);
+","""2""",2,c,English,FALSE,,
+294,25,"What is the result of running this code?
+char name[] = ""Luis"";
+printf(""Hola, %s"", name);
+","""Hola, Luis""","""Hola, Luis""",c,English,FALSE,,
+295,25,"What is the result of running this code?
+int result = 6 < 10;
+printf(""%d"", result);
+","""1, true""",1,c,English,FALSE,,
+296,25,"What is the result of running this code?
+int arr[] = {2, 4, 6, 8};
+printf(""%d"", arr[3]);
+","""8""",8,c,English,FALSE,,
+297,25,"What is the result of running this code?
+float x = 5.7;
+int y = (int)x;
+printf(""%d"", y);
+","""5""",5,c,English,FALSE,,
+298,25,"What is the result of running this code?
+int a = 10;
+int b = 4;
+printf(""%d"", a % b);
+","""2""",2,c,English,FALSE,,
+299,25,"What is the result of running this code?
+char str[] = ""Code"";
+printf(""%d"", sizeof(str));
+","""5""",5,c,English,FALSE,,
+300,25,"What is the result of running this code?
+int x = 5;
+x += 10;
+printf(""%d"", x);
+","""15""",15,c,English,FALSE,,
+301,25,"What is the result of running this code?
+char colors[3][10] = {""red"", ""blue"", ""green""};
+printf(""%s"", colors[1]);
+","""blue""","""blue""",c,English,FALSE,,
+302,25,"What is the result of running this code?
+int a = 0;
+if(a)
+    printf(""True"");
+else
+    printf(""False"");
+","""false, 0""","""False""",c,English,FALSE,,
+303,25,"¿Cuál es el resultado de la ejecución de este código?
+int x = 9;
+int y = 2;
+std::cout << x / y;
+","""4""",4,c++,Spanish,FALSE,,
+304,25,"¿Cuál es el resultado de la ejecución de este código?
+std::string name = ""Sofia"";
+std::cout << ""Hello, "" << name;
+","""Hello, Sofia""","""Hello, Sofia""",c++,Spanish,FALSE,,
+305,25,"¿Cuál es el resultado de la ejecución de este código?
+bool result = (8 > 5);
+std::cout << result;
+","""1, true""",1,c++,Spanish,FALSE,,
+306,25,"¿Cuál es el resultado de la ejecución de este código?
+int arr[] = {10, 20, 30, 40};
+std::cout << arr[1];
+","""20""",20,c++,Spanish,FALSE,,
+307,25,"¿Cuál es el resultado de la ejecución de este código?
+double pi = 3.14159;
+int intPi = static_cast<int>(pi);
+std::cout << intPi;
+","""3""",3,c++,Spanish,FALSE,,
+308,25,"¿Cuál es el resultado de la ejecución de este código?
+int a = 7;
+int b = 4;
+std::cout << a % b;
+","""3""",3,c++,Spanish,FALSE,,
+309,25,"¿Cuál es el resultado de la ejecución de este código?
+std::string str = ""C++"";
+std::cout << str.length();
+","""3""",3,c++,Spanish,FALSE,,
+310,25,"¿Cuál es el resultado de la ejecución de este código?
+int x = 6;
+x *= 3;
+std::cout << x;
+","""18""",18,c++,Spanish,FALSE,,
+311,25,"¿Cuál es el resultado de la ejecución de este código?
+std::string colors[] = {""red"", ""green"", ""blue""};
+std::cout << colors[2];
+","""blue""","""blue""",c++,Spanish,FALSE,,
+312,25,"¿Cuál es el resultado de la ejecución de este código?
+bool isTrue = false;
+std::cout << (isTrue ? ""Yes"" : ""No"");
+","""No""","""No""",c++,Spanish,FALSE,,
+313,25,"What is the result of running this code?
+int x = 9;
+int y = 2;
+std::cout << x / y;
+","""4""",4,c++,English,FALSE,,
+314,25,"What is the result of running this code?
+std::string name = ""Sofia"";
+std::cout << ""Hello, "" << name;
+","""Hello, Sofia""","""Hello, Sofia""",c++,English,FALSE,,
+315,25,"What is the result of running this code?
+bool result = (8 > 5);
+std::cout << result;
+","""1, true""",1,c++,English,FALSE,,
+316,25,"What is the result of running this code?
+int arr[] = {10, 20, 30, 40};
+std::cout << arr[1];
+","""20""",20,c++,English,FALSE,,
+317,25,"What is the result of running this code?
+double pi = 3.14159;
+int intPi = static_cast<int>(pi);
+std::cout << intPi;
+","""3""",3,c++,English,FALSE,,
+318,25,"What is the result of running this code?
+int a = 7;
+int b = 4;
+std::cout << a % b;
+","""3""",3,c++,English,FALSE,,
+319,25,"What is the result of running this code?
+std::string str = ""C++"";
+std::cout << str.length();
+","""3""",3,c++,English,FALSE,,
+320,25,"What is the result of running this code?
+int x = 6;
+x *= 3;
+std::cout << x;
+","""18""",18,c++,English,FALSE,,
+321,25,"What is the result of running this code?
+std::string colors[] = {""red"", ""green"", ""blue""};
+std::cout << colors[2];
+","""blue""","""blue""",c++,English,FALSE,,
+322,25,"What is the result of running this code?
+bool isTrue = false;
+std::cout << (isTrue ? ""Yes"" : ""No"");
+","""No""","""No""",c++,English,FALSE,,
+323,25,"¿Cuál es el resultado de la ejecución de este código?
+x = 10
+y = 4
+print(x // y)
+","""2""",2,python,Spanish,FALSE,,
+324,25,"¿Cuál es el resultado de la ejecución de este código?
+name = ""Ana""
+print(f""Hola, {name}"")
+","""Hola, Ana""","""Hola, Ana""",python,Spanish,FALSE,,
+325,25,"¿Cuál es el resultado de la ejecución de este código?
+result = 3 < 5
+print(result)
+","""true""","""True""",python,Spanish,FALSE,,
+326,25,"¿Cuál es el resultado de la ejecución de este código?
+lista = [4, 6, 8, 10]
+print(lista[2])
+","""8""",8,python,Spanish,FALSE,,
+327,25,"¿Cuál es el resultado de la ejecución de este código?
+x = 7.8
+y = int(x)
+print(y)
+","""7""",7,python,Spanish,FALSE,,
+328,25,"¿Cuál es el resultado de la ejecución de este código?
+x = 3
+y = 5
+z = 7
+print(x + y * z)
+","""38""",38,python,Spanish,FALSE,,
+329,25,"¿Cuál es el resultado de la ejecución de este código?
+s = ""Python""
+print(s.upper())
+","""PYTHON""","""PYTHON""",python,Spanish,FALSE,,
+330,25,"¿Cuál es el resultado de la ejecución de este código?
+x = 15
+x %= 4
+print(x)
+","""3""",3,python,Spanish,FALSE,,
+331,25,"¿Cuál es el resultado de la ejecución de este código?
+colores = [""rojo"", ""azul"", ""verde""]
+print(len(colores))
+","""3""",3,python,Spanish,FALSE,,
+332,25,"¿Cuál es el resultado de la ejecución de este código?
+a = True
+b = False
+print(a or b)
+","""true""","""True""",python,Spanish,FALSE,,
+333,25,"What is the result of running this code?
+x = 10
+y = 4
+print(x // y)
+","""2""",2,python,English,FALSE,,
+334,25,"What is the result of running this code?
+name = ""Ana""
+print(f""Hola, {name}"")
+","""Hola, Ana""","""Hola, Ana""",python,English,FALSE,,
+335,25,"What is the result of running this code?
+result = 3 < 5
+print(result)
+","""true""","""True""",python,English,FALSE,,
+336,25,"What is the result of running this code?
+lista = [4, 6, 8, 10]
+print(lista[2])
+","""8""",8,python,English,FALSE,,
+337,25,"What is the result of running this code?
+x = 7.8
+y = int(x)
+print(y)
+","""7""",7,python,English,FALSE,,
+338,25,"What is the result of running this code?
+x = 3
+y = 5
+z = 7
+print(x + y * z)
+","""38""",38,python,English,FALSE,,
+339,25,"What is the result of running this code?
+s = ""Python""
+print(s.upper())
+","""PYTHON""","""PYTHON""",python,English,FALSE,,
+340,25,"What is the result of running this code?
+x = 15
+x %= 4
+print(x)
+","""3""",3,python,English,FALSE,,
+341,25,"What is the result of running this code?
+colores = [""rojo"", ""azul"", ""verde""]
+print(len(colores))
+","""3""",3,python,English,FALSE,,
+342,25,"What is the result of running this code?
+a = True
+b = False
+print(a or b)
+","""true""","""True""",python,English,FALSE,,
+343,25,"¿Cuál es el resultado de la ejecución de este código?
+int x = 3;
+int y = 7;
+Console.WriteLine(x * y);
+","""21""",21,c#,Spanish,FALSE,,
+344,25,"¿Cuál es el resultado de la ejecución de este código?
+string name = ""Carlos"";
+Console.WriteLine(""Hello, "" + name);
+","""Hello, Carlos""","""Hello, Carlos""",c#,Spanish,FALSE,,
+345,25,"¿Cuál es el resultado de la ejecución de este código?
+bool result = (5 > 3);
+Console.WriteLine(result);
+","""true""","""true""",c#,Spanish,FALSE,,
+346,25,"¿Cuál es el resultado de la ejecución de este código?
+int[] numbers = { 10, 20, 30, 40 };
+Console.WriteLine(numbers[2]);
+","""30""",30,c#,Spanish,FALSE,,
+347,25,"¿Cuál es el resultado de la ejecución de este código?
+double x = 9.5;
+int y = (int)x;
+Console.WriteLine(y);
+","""9""",9,c#,Spanish,FALSE,,
+348,25,"¿Cuál es el resultado de la ejecución de este código?
+int a = 10;
+int b = 4;
+Console.WriteLine(a % b);
+","""2""",2,c#,Spanish,FALSE,,
+349,25,"¿Cuál es el resultado de la ejecución de este código?
+string str = ""C#"";
+Console.WriteLine(str.Length);
+","""2""",2,c#,Spanish,FALSE,,
+350,25,"¿Cuál es el resultado de la ejecución de este código?
+int x = 12;
+x -= 3;
+Console.WriteLine(x);
+","""9""",9,c#,Spanish,FALSE,,
+351,25,"¿Cuál es el resultado de la ejecución de este código?
+string[] colors = { ""red"", ""green"", ""blue"" };
+Console.WriteLine(colors[1]);
+","""green""","""green""",c#,Spanish,FALSE,,
+352,25,"¿Cuál es el resultado de la ejecución de este código?
+bool isTrue = true;
+bool isFalse = false;
+Console.WriteLine(isTrue && isFalse);
+","""false""","""false""",c#,Spanish,FALSE,,
+353,25,"What is the result of running this code?
+int x = 3;
+int y = 7;
+Console.WriteLine(x * y);
+","""21""",21,c#,English,FALSE,,
+354,25,"What is the result of running this code?
+string name = ""Carlos"";
+Console.WriteLine(""Hello, "" + name);
+","""Hello, Carlos""","""Hello, Carlos""",c#,English,FALSE,,
+355,25,"What is the result of running this code?
+bool result = (5 > 3);
+Console.WriteLine(result);
+","""true""","""true""",c#,English,FALSE,,
+356,25,"What is the result of running this code?
+int[] numbers = { 10, 20, 30, 40 };
+Console.WriteLine(numbers[2]);
+","""30""",30,c#,English,FALSE,,
+357,25,"What is the result of running this code?
+double x = 9.5;
+int y = (int)x;
+Console.WriteLine(y);
+","""9""",9,c#,English,FALSE,,
+358,25,"What is the result of running this code?
+int a = 10;
+int b = 4;
+Console.WriteLine(a % b);
+","""2""",2,c#,English,FALSE,,
+359,25,"What is the result of running this code?
+string str = ""C#"";
+Console.WriteLine(str.Length);
+","""2""",2,c#,English,FALSE,,
+360,25,"What is the result of running this code?
+int x = 12;
+x -= 3;
+Console.WriteLine(x);
+","""9""",9,c#,English,FALSE,,
+361,25,"What is the result of running this code?
+string[] colors = { ""red"", ""green"", ""blue"" };
+Console.WriteLine(colors[1]);
+","""green""","""green""",c#,English,FALSE,,
+362,25,"What is the result of running this code?
+bool isTrue = true;
+bool isFalse = false;
+Console.WriteLine(isTrue && isFalse);
+","""false""","""false""",c#,English,FALSE,,
+363,25,"¿Cuál es el resultado de la ejecución de este código?
+int x = 5;
+int y = 10;
+System.out.println(x + y);
+","""15""",15,java,Spanish,FALSE,,
+364,25,"¿Cuál es el resultado de la ejecución de este código?
+String welcome = ""bienvenido"";
+System.out.println(""Hola, "" + welcome);
+","""Hola, bienvenido""","""Hola, bienvenido""",java,Spanish,FALSE,,
+365,25,"¿Cuál es el resultado de la ejecución de este código?
+System.out.println(42 == 42);
+","""true""","""true""",java,Spanish,FALSE,,
+366,25,"¿Cuál es el resultado de la ejecución de este código?
+int[] arr = {1, 2, 3};
+System.out.println(arr.length);
+","""3""",3,java,Spanish,FALSE,,
+367,25,"¿Cuál es el resultado de la ejecución de este código?
+boolean result = 5 == 5.0;
+System.out.println(result);
+","""true""","""true""",java,Spanish,FALSE,,
+368,25,"¿Cuál es el resultado de la ejecución de este código?
+int x = 5;
+int y = 3;
+System.out.println(x / y);
+","""1""",1,java,Spanish,FALSE,,
+369,25,"¿Cuál es el resultado de la ejecución de este código?
+String s = null;
+System.out.println(s == null);
+","""true""","""true""",java,Spanish,FALSE,,
+370,25,"¿Cuál es el resultado de la ejecución de este código?
+int x = 10;
+x += 5;
+System.out.println(x);","""15""",15,java,Spanish,FALSE,,
+371,25,"¿Cuál es el resultado de la ejecución de este código?
+String[] fruits = {""apple"", ""banana""};
+System.out.println(fruits[0]);
+","""apple""","""apple""",java,Spanish,FALSE,,
+372,25,"¿Cuál es el resultado de la ejecución de este código?
+boolean b = false;
+System.out.println(b ? ""True"" : ""False"");
+","""False""","""False""",java,Spanish,FALSE,,
+373,25,"What is the result of running this code?
+int x = 5;
+int y = 10;
+System.out.println(x + y);
+","""15""",15,java,English,FALSE,,
+374,25,"What is the result of running this code?
+String welcome = ""bienvenido"";
+System.out.println(""Hola, "" + welcome);
+","""Hola, bienvenido""","""Hola, bienvenido""",java,English,FALSE,,
+375,25,"What is the result of running this code?
+System.out.println(42 == 42);
+","""true""","""true""",java,English,FALSE,,
+376,25,"What is the result of running this code?
+int[] arr = {1, 2, 3};
+System.out.println(arr.length);
+","""3""",3,java,English,FALSE,,
+377,25,"What is the result of running this code?
+boolean result = 5 == 5.0;
+System.out.println(result);
+","""true""","""true""",java,English,FALSE,,
+378,25,"What is the result of running this code?
+int x = 5;
+int y = 3;
+System.out.println(x / y);
+","""1""",1,java,English,FALSE,,
+379,25,"What is the result of running this code?
+String s = null;
+System.out.println(s == null);
+","""true""","""true""",java,English,FALSE,,
+380,25,"What is the result of running this code?
+int x = 10;
+x += 5;
+System.out.println(x);","""15""",15,java,English,FALSE,,
+381,25,"What is the result of running this code?
+String[] fruits = {""apple"", ""banana""};
+System.out.println(fruits[0]);
+","""apple""","""apple""",java,English,FALSE,,
+382,25,"What is the result of running this code?
+boolean b = false;
+System.out.println(b ? ""True"" : ""False"");
+","""False""","""False""",java,English,FALSE,,
+383,25,"¿Cuál es el resultado de la ejecución de este código?
+let x = 5;
+let y = 10;
+console.log(x + y);
+","""15""",15,javascript,Spanish,FALSE,,
+384,25,"¿Cuál es el resultado de la ejecución de este código?
+let name = ""Coding Coach"";
+console.log(""Hola, bienvenido a "" + name);
+","""Hola, bienvenido a Coding Coach""","""Hola, bienvenido a Coding Coach""",javascript,Spanish,FALSE,,
+385,25,"¿Cuál es el resultado de la ejecución de este código?
+console.log(typeof 42);
+","""number""","""number""",javascript,Spanish,FALSE,,
+386,25,"¿Cuál es el resultado de la ejecución de este código?
+let arr = [1, 2, 3];
+console.log(arr.length);
+","""3""",3,javascript,Spanish,FALSE,,
+387,25,"¿Cuál es el resultado de la ejecución de este código?
+let result = 5 === ""5"";
+console.log(result);
+","""false""","""false""",javascript,Spanish,FALSE,,
+388,25,"¿Cuál es el resultado de la ejecución de este código?
+let x = ""5"";
+let y = 5;
+console.log(x == y);
+","""true""","""true""",javascript,Spanish,FALSE,,
+389,25,"¿Cuál es el resultado de la ejecución de este código?
+let a = null;
+console.log(a === null);
+","""true""","""true""",javascript,Spanish,FALSE,,
+390,25,"¿Cuál es el resultado de la ejecución de este código?
+let x = 10;
+x += 5;
+console.log(x);
+","""15""",15,javascript,Spanish,FALSE,,
+391,25,"¿Cuál es el resultado de la ejecución de este código?
+let fruits = [""apple"", ""banana""];
+console.log(fruits[0]);
+","""apple""","""apple""",javascript,Spanish,FALSE,,
+392,25,"¿Cuál es el resultado de la ejecución de este código?
+let x = 0;
+console.log(Boolean(x));
+","""false""","""false""",javascript,Spanish,FALSE,,
+393,25,"What is the result of running this code?
+let x = 5;
+let y = 10;
+console.log(x + y);
+","""15""",15,javascript,English,FALSE,,
+394,25,"What is the result of running this code?
+let name = ""Coding Coach"";
+console.log(""Hello, welcome to "" + name);
+","""Hello, welcome to Coding Coach""","""Hello, welcome to Coding Coach""",javascript,English,FALSE,,
+395,25,"What is the result of running this code?
+console.log(typeof 42);
+","""number""","""number""",javascript,English,FALSE,,
+396,25,"What is the result of running this code?
+let arr = [1, 2, 3];
+console.log(arr.length);
+","""3""",3,javascript,English,FALSE,,
+397,25,"What is the result of running this code?
+let result = 5 === ""5"";
+console.log(result);
+","""false""","""false""",javascript,English,FALSE,,
+398,25,"What is the result of running this code?
+let x = ""5"";
+let y = 5;
+console.log(x == y);
+","""true""","""true""",javascript,English,FALSE,,
+399,25,"What is the result of running this code?
+let a = null;
+console.log(a === null);
+","""true""","""true""",javascript,English,FALSE,,
+400,25,"What is the result of running this code?
+let x = 10;
+x += 5;
+console.log(x);
+","""15""",15,javascript,English,FALSE,,
+401,25,"What is the result of running this code?
+let fruits = [""apple"", ""banana""];
+console.log(fruits[0]);
+","""apple""","""apple""",javascript,English,FALSE,,
+402,25,"What is the result of running this code?
+let x = 0;
+console.log(Boolean(x));
+","""false""","""false""",javascript,English,FALSE,,
+403,20,¿Cómo se declara una variable en PHP?,"""declarar variable, PHP, símbolo $, nombre de la variable, $""","En PHP, una variable se declara usando el símbolo $ seguido del nombre de la variable.",php,Spanish,FALSE,,
+404,20,¿Cómo se imprime texto en PHP?,"""echo, print""","En PHP, el texto se imprime usando echo o print.",php,Spanish,FALSE,,
+405,20,¿Cómo se crea o inicializa un arreglo en PHP?,"""array(), corchetes, []""","En PHP, un arreglo se crea usando la función array() o corchetes [].",php,Spanish,FALSE,,
+406,20,¿Cómo se escribe un comentario de una sola línea en PHP?,"""//, #""",Un comentario de una sola línea en PHP se escribe usando // o # al inicio de la línea.,php,Spanish,FALSE,,
+407,20,¿Qué es un ciclo for en PHP?,"""ciclo for, PHP, iterar, bloque de código, número de veces""",Un ciclo for en PHP se utiliza para ejecutar un bloque de código un número específico de veces.,php,Spanish,FALSE,,
+408,20,¿Qué es un if en PHP?,"""if, PHP, estructura condicional, bloque de código, condición verdadera""",Un if en PHP es una estructura condicional que ejecuta un bloque de código si una condición es verdadera.,php,Spanish,FALSE,,
+409,20,¿Qué es un bucle while en PHP?,"""bucle while, PHP, repetir, condición verdadera, bloque de código""",Un bucle while en PHP repite un bloque de código mientras una condición sea verdadera.,php,Spanish,FALSE,,
+410,20,¿Cómo se definen las funciones en PHP?,"""definir función, PHP, function, nombre de la función, paréntesis""","En PHP, una función se define usando la palabra clave function seguida del nombre de la función y los paréntesis.",php,Spanish,FALSE,,
+411,20,¿Qué es una constante en PHP?,"""constante, PHP, valor inmutable, define(), declaración""","Una constante en PHP es un valor que no puede cambiar una vez definido, y se declara usando define().",php,Spanish,FALSE,,
+412,20,¿Cómo se conecta PHP con una base de datos MySQL?,"""conectar, PHP, MySQL, mysqli_connect(), PDO, base de datos""",PHP se conecta a una base de datos MySQL usando funciones como mysqli_connect() o PDO.,php,Spanish,FALSE,,
+413,20,How do you declare a variable in PHP?,"""declare variable, PHP, $ symbol, variable name""","In PHP, a variable is declared using the $ symbol followed by the variable name.",php,English,FALSE,,
+414,20,How do you print text in PHP?,"""print text, PHP, echo, print""","In PHP, text is printed using echo or print.",php,English,FALSE,,
+415,20,How do you create or initialize an array in PHP?,"""array(), square brackets, []""","In PHP, an array is created using the array() function or square brackets [].",php,English,FALSE,,
+416,20,How do you write a single-line comment in PHP?,"""//, #""",A single-line comment in PHP is written using // or # at the beginning of the line.,php,English,FALSE,,
+417,20,What is a for loop in PHP?,"""for loop, PHP, iterate, block of code, number of times""",A for loop in PHP is used to execute a block of code a specific number of times.,php,English,FALSE,,
+418,20,What is an if statement in PHP?,"""if statement, PHP, conditional structure, block of code, true condition""",An if statement in PHP is a conditional structure that executes a block of code if a condition is true.,php,English,FALSE,,
+419,20,What is a while loop in PHP?,"""while loop, PHP, repeat, true condition, block of code""",A while loop in PHP repeats a block of code as long as a condition is true.,php,English,FALSE,,
+420,20,How do you define functions in PHP?,"""define function, PHP, function, function name, parentheses""","In PHP, a function is defined using the function keyword followed by the function name and parentheses.",php,English,FALSE,,
+421,20,What is a constant in PHP?,"""constant, PHP, immutable value, define(), declaration""","A constant in PHP is a value that cannot change once defined, and it is declared using define().",php,English,FALSE,,
+422,20,How does PHP connect to a MySQL database?,"""connect, PHP, MySQL, mysqli_connect(), PDO, database""",PHP connects to a MySQL database using functions like mysqli_connect() or PDO.,php,English,FALSE,,
+423,25,"Selecciona el nombre de todos los empleados en la tabla employees.
++----+-----------+------------------+----------+
+| ID  | Name   | Department    | Salary  |
++----+-----------+-------------------+---------+
+| 1   | John      | IT                   | 60000  |
+| 2   | Jane      | HR                 | 55000  |
+| 3   | Alice      | Sales              | 70000 |
+| 4   | Bob       | Marketing       | 50000  |
+| 5   | Charlie  | IT                    | 62000  |
++----+-----------+-------------------+----------+
+","""SELECT name FROM employees;, select name from employees;""",SELECT name FROM employees;,sql,Spanish,FALSE,,
